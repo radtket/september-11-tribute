@@ -1,0 +1,92 @@
+html {
+	color: $base-font-color;
+	font-family: $primary-font-family;
+	font-size: 100%;
+	line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: $heading-font-family;
+	font-size: modular-scale(1);
+	line-height: $heading-line-height;
+	margin: 0 0 $small-spacing;
+}
+
+p {
+	margin: 0 0 $small-spacing;
+}
+
+a {
+	color: $action-color;
+	text-decoration: none;
+	transition: color $base-duration $base-timing;
+
+	&:hover {
+		color: shade($action-color, 25%);
+	}
+
+	&:focus {
+		outline: $focus-outline;
+		outline-offset: $focus-outline-offset;
+	}
+}
+
+hr {
+	border-bottom: $base-border;
+	border-left: 0;
+	border-right: 0;
+	border-top: 0;
+	margin: $base-spacing 0;
+}
+
+
+.headline {
+	margin-bottom: 40px;
+	text-align: center;
+
+	h2 {
+		font-size: 28px;
+		font-weight: 600;
+		margin-bottom: 0;
+
+		@media only screen and (min-width: 550px) {
+			font-size: 34px;
+		}
+
+		@media only screen and (min-width: 768px) {
+			font-size: 40px;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			font-size: 46px;
+		}
+	}
+
+	&--stacked {
+		// text-align: center;
+		// margin-bottom: 40px;
+
+		h2 {
+			@include margin($small-spacing null);
+		}
+
+		h5 {
+			font-family: $secondary-font-family;
+			font-size: 16px;
+			font-weight: 400;
+
+			@media only screen and (min-width: 550px) {
+				font-size: 20px;
+			}
+
+			@media only screen and (min-width: 768px) {
+				font-size: 24px;
+			}
+		}
+	}
+}

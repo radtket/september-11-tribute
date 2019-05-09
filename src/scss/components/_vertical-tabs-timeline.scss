@@ -1,0 +1,194 @@
+$ball-size: 22px;
+$ball-line-inactive: 80px;
+$line-color: $c-white;
+$vertical-tabs-height: 785px;
+$vertical-tabs-nav--width: 200px;
+$border-size: 2px;
+$tiny-ball-size: 6px;
+
+.vertical-tabs-container {
+	@include clearfix;
+	display: flex;
+	margin-top: 80px;
+
+	.vertical-tabs {
+		// height: $vertical-tabs-height;
+		display: inline;
+		float: left;
+		position: relative;
+		width: $vertical-tabs-nav--width;
+
+		&::before {
+			@include size($border-size, 100%);
+			@include position(absolute, 0 ($ball-line-inactive + 1px) null null);
+			background: $line-color;
+			content: "";
+		}
+	}
+
+	.vertical-tab {
+		cursor: pointer;
+		display: block;
+		font-family: $primary-font-family;
+		font-size: 20px;
+		height: $ball-size;
+		line-height: $ball-size;
+		position: relative;
+
+		&:hover {
+
+			span {
+				opacity: 1;
+			}
+
+			&::after {
+				background: lighten(#003b71, 5%);
+			}
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&::before {
+			@include size($ball-line-inactive, $border-size);
+			@include position(absolute, (($ball-size - ($border-size * 2)) * 0.5) ($ball-line-inactive * 0.5) null null);
+			background: $line-color;
+			content: "";
+			// margin-top: $border-size * -0.5;
+		}
+
+		&::after {
+			@include size($ball-size);
+			background-color: #003b71;
+			border: 1px solid $line-color;
+			border-radius: 50%;
+			content: "";
+			position: absolute;
+			right: $ball-line-inactive - (($ball-size - ($border-size * 2)) * 0.5);
+			top: 0;
+			transition: background-color 0.5s;
+		}
+
+		&:first-child {
+			margin-top: 15px;
+		}
+
+		&:last-child {
+			margin-bottom: 15px;
+		}
+
+		&[rel="09-11-01a"],
+		&[rel="09-19-01"],
+		&[rel="09-20-01"],
+		&[rel="11-04-01"] {
+			margin-bottom: 10px;
+		}
+
+		&[rel="09-11-01b"] {
+			margin-bottom: 20px;
+		}
+
+		&[rel="09-21-01"] {
+			margin-bottom: 30px;
+		}
+
+		&[rel="10-08-01"],
+		&[rel="02-26-02"] {
+			margin-bottom: 65px;
+		}
+
+		&[rel="11-05-01"] {
+			margin-bottom: 165px;
+		}
+
+		&[rel="04-23-02"] {
+			margin-bottom: 200px;
+		}
+
+		span {
+			color: $c-white;
+			display: block;
+			opacity: 0.8;
+			padding-right: 50px;
+			position: relative;
+			transition: opacity 0.5s;
+
+			&::before,
+			&::after {
+				@include size($tiny-ball-size);
+				@include position(absolute, $tiny-ball-size null null null);
+				background: $line-color;
+				border-radius: 50%;
+				content: "";
+				margin-top: $border-size * 0.5;
+			}
+
+			&::before {
+				left: $ball-line-inactive - ($tiny-ball-size / 2);
+			}
+
+			&::after {
+				left: $ball-line-inactive - ($tiny-ball-size / 2) + $ball-line-inactive;
+				transform: translateY(0);
+				transition: all 0.5s;
+			}
+		}
+
+		&.is-active {
+			&::after {
+				background: $c-red-primary;
+			}
+
+			span {
+				opacity: 1;
+
+				&::after {
+					@include size(45px, $border-size);
+					border-radius: 0;
+					transform: translateY($border-size);
+				}
+			}
+		}
+	}
+
+	.vertical-tab-content-container {
+		// @include size(80%, $vertical-tabs-height);
+		// display: inline-block;
+		// width: 80%;
+		align-items: center;
+		background: rgba($c-white, 0.04);
+		border: 2px solid $line-color;
+		display: flex;
+		justify-content: center;
+		width: calc(100% - 200px);
+	}
+
+	.vertical-tab-content {
+		display: none;
+		text-align: center;
+		width: 80%;
+
+		svg {
+			@include margin(5px auto 15px);
+			display: block;
+			fill: $c-white;
+			height: 65px;
+		}
+
+		h2 {
+			font-size: 36px;
+		}
+
+		h5 {
+			font-size: 20px;
+			margin-bottom: 22px;
+			text-transform: uppercase;
+		}
+
+		p {
+			font-family: $secondary-font-family;
+			font-size: 20px;
+		}
+	}
+}

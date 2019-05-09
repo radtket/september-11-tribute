@@ -1,0 +1,75 @@
+.flag-quote {
+	background-image: url("../img/backgrounds/usa-flag.jpg");
+	position: relative;
+	text-align: center;
+
+	&::before {
+		@include size(100%);
+		@include position(absolute, 0 0 0 0);
+		background: rgba($c-white, 0.85);
+		content: "";
+	}
+
+
+	&__blockquote {
+		@include margin(null auto);
+		color: $c-blue-primary;
+		font-size: 30px;
+		max-width: 1050px;
+		position: relative;
+		z-index: 1;
+
+		@media only screen and (min-width: 550px) {
+			font-size: 36px;
+		}
+
+		@media only screen and (min-width: 768px) {
+			font-size: 42px;
+		}
+
+		@media only screen and (min-width: 1024px) {
+			font-size: 48px;
+		}
+
+		blockquote {
+			@include margin(0);
+
+			p {
+				position: relative;
+
+				// &::before {
+				// 	@include position(absolute, null null -100% 0);
+				// 	color: $c-red;
+				// 	content: "\201C";
+				// 	font-size: 7.5em;
+				// 	font-weight: 700;
+				// 	opacity: 0.1;
+				// 	text-shadow: none;
+				// 	z-index: -1;
+				// }
+			}
+
+			strong {
+				display: block;
+
+				span {
+					font-style: normal;
+					font-weight: normal;
+				}
+			}
+		}
+	}
+
+	cite {
+		display: inherit;
+		font-size: 18px;
+
+		@media only screen and (min-width: 550px) {
+			font-size: 24px;
+		}
+
+		@media only screen and (min-width: 768px) {
+			font-size: 30px;
+		}
+	}
+}

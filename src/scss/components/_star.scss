@@ -1,0 +1,88 @@
+/**
+ *  STAR PAGE ACCENT
+ *
+ *  Markup:
+ *  -------
+ *
+ *  <figure class="page-accent__wrap">
+ *    <div class="page-accent page-accent__blue">
+ *      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+ *        <path
+ *          d="M26.08 31.76l-9.96-7.4L6.3 32l3.66-12.22L0 12.37l12.22-.15L15.88 0l3.9 12.13L32 11.99l-9.82 7.64 3.9 12.13z" />
+ *      </svg>
+ *    </div>
+ *  </figure>
+ *
+ */
+
+
+
+$star-color-default: #8D99A6;
+$star-accent-colors: ("blue": $c-blue-primary,
+	"red": $c-red-primary);
+
+.page-accent {
+	display: inline-block;
+	height: 30px;
+	position: relative;
+
+	&::before,
+	&::after {
+		@include position(absolute, 60% null null null);
+		@include size(180px, 2px);
+		background: $star-color-default;
+		content: "";
+	}
+
+	&::before {
+		background: linear-gradient(270deg, rgba($star-color-default, 1) 50%, transparent 100%);
+		right: 105%;
+	}
+
+	&::after {
+		background: linear-gradient(90deg, rgba($star-color-default, 1) 50%, transparent 100%);
+		left: 105%;
+	}
+
+	svg {
+		fill: $star-color-default;
+		height: 100%;
+	}
+
+	&__wrap {
+		@include margin(null auto $base-spacing);
+		display: block;
+		text-align: center;
+	}
+
+	&__stars {
+		height: 20px;
+		text-align: center;
+
+		svg {
+			fill: $star-color-default;
+			height: 100%;
+		}
+	}
+}
+
+
+@each $star-accent-name,
+$color in $star-accent-colors {
+
+	.page-accent__#{$star-accent-name} {
+		&.page-accent {
+			&::before {
+				background: linear-gradient(270deg, rgba($color, 1) 50%, transparent 100%);
+			}
+
+			&::after {
+				background: linear-gradient(90deg, rgba($color, 1) 50%, transparent 100%);
+			}
+
+			svg {
+				fill: $color;
+			}
+		}
+	}
+}

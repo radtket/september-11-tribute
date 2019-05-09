@@ -1,0 +1,50 @@
+// Typography
+$primary-font-family: "AdobeTextPro";
+$secondary-font-family: "Acumin Pro";
+$heading-font-family: $primary-font-family;
+
+// Line height
+$base-line-height: 1.5;
+$heading-line-height: 1.2;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: 24px;
+$small-spacing: $base-spacing / 2;
+$base-z-index: 0;
+
+// Colors
+$c-white: #fff;
+$c-black: #000;
+$c-off-white: #f1f2f2;
+$c-blue-primary: #111c4e;
+$c-blue-alt: #112d50;
+$c-red-primary: #e1251b;
+$dark-gray: #333;
+$medium-gray: #999;
+$light-gray: #ddd;
+
+$c-green: #75ce66;
+$c-red: #c03b44;
+$c-yellow: #f0ca45;
+
+// Font Colors
+$base-font-color: $dark-gray;
+$action-color: $c-blue-primary;
+
+// Border
+$base-border-color: $light-gray;
+$base-border: 1px solid $base-border-color;
+
+// Background Colors
+$viewport-background-color: #fff;
+
+// Focus
+$focus-outline-color: transparentize($action-color, 0.4);
+$focus-outline-width: 3px;
+$focus-outline: $focus-outline-width solid $focus-outline-color;
+$focus-outline-offset: 2px;
+
+// Animations
+$base-duration: 150ms;
+$base-timing: ease;

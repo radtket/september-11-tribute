@@ -1,0 +1,103 @@
+$navbar-height: 60px;
+
+.navbar {
+	text-align: center;
+
+	&.sticky {
+		@include position(fixed, 0 0 null 0);
+		border-top: 0;
+		width: 100%;
+		z-index: 100;
+	}
+
+	.nav {
+		line-height: $navbar-height;
+		margin: auto;
+
+		&__trigger {
+			@include padding(0);
+			background: transparent;
+			color: rgba($c-white, 0.7);
+			font-family: $secondary-font-family;
+			font-size: 18px;
+			height: $navbar-height;
+			line-height: $navbar-height;
+			position: relative;
+			text-transform: uppercase;
+			top: 2px;
+			transition: color 0.5s;
+
+			&:hover {
+				color: $c-white;
+			}
+
+			&:focus {
+				outline: 0;
+			}
+
+			@media only screen and (min-width: 800px) {
+				display: none;
+			}
+		}
+
+		li {
+			@include padding(10px null);
+			display: block;
+			line-height: 1;
+
+			@media only screen and (min-width: 800px) {
+				border-right: 1px solid rgba($c-white, 0.5);
+				display: inline-block;
+
+				&:last-child {
+					border-right: 0;
+				}
+			}
+
+			&.active {
+				.nav__item {
+					color: $c-white;
+				}
+			}
+		}
+
+		&__item {
+			color: rgba($c-white, 0.75);
+			font-size: 18px;
+			position: relative;
+			text-transform: uppercase;
+			top: 3px;
+			transition: color 0.5s;
+
+			@media only screen and (min-width: 800px) {
+				@include padding(null 10px);
+			}
+
+			@media only screen and (min-width: 870px) {
+				@include padding(null 16px);
+			}
+
+			@media only screen and (min-width: 1024px) {
+				@include padding(null 24px);
+			}
+
+			@media only screen and (min-width: 1200px) {
+				@include padding(null 36px);
+			}
+
+			@media only screen and (min-width: 1300px) {
+				@include padding(null 48px);
+			}
+
+			.active & {
+				color: $c-white;
+			}
+
+			&:focus,
+			&:hover {
+				color: $c-white;
+				outline: none;
+			}
+		}
+	}
+}

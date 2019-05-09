@@ -1,0 +1,12 @@
+$image-height: 1245px * 0.25; // 300px
+
+.hero {
+	margin-bottom: -$image-height;
+
+	img {
+		@include position(relative, -$image-height 0 null 0);
+		display: block;
+		margin: 0 auto;
+		z-index: -1;
+	}
+}

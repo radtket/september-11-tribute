@@ -1,0 +1,66 @@
+.recognition {
+
+	// h2 {
+	// 	font-family: $secondary-font-family;
+	// }
+
+	article {
+		@include margin(40px auto 60px);
+		text-align: center;
+
+		.headline {
+			margin-bottom: 12px;
+		}
+
+		p {
+			font-size: 16px;
+			margin-bottom: 24px;
+
+
+			@media only screen and (min-width: 550px) {
+				font-size: 20px;
+			}
+
+			@media only screen and (min-width: 768px) {
+				font-size: 22px;
+			}
+		}
+	}
+
+	&__badges {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+
+		.badge {
+
+			&__left,
+			&__right {
+				height: 125px * 0.5;
+
+				@media only screen and (min-width: 550px) {
+					height: 125px * 0.75;
+				}
+
+				@media only screen and (min-width: 768px) {
+					height: 125px;
+				}
+			}
+
+			&__center {
+				@include margin(null (40px * 0.5));
+				height: 175px * 0.5;
+
+				@media only screen and (min-width: 550px) {
+					@include margin(null (40px * 0.75));
+					height: 175px * 0.75;
+				}
+
+				@media only screen and (min-width: 768px) {
+					height: 175px;
+					@include margin(null 40px);
+				}
+			}
+		}
+	}
+}

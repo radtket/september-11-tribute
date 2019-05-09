@@ -1,0 +1,20 @@
+.document {
+	&--item {
+		@include grid-column(12);
+		margin-bottom: $base-spacing;
+		text-align: center;
+
+		@media only screen and (min-width: 550px) {
+			@include grid-column(6);
+		}
+
+		@media only screen and (min-width: 768px) {
+			@include grid-column(4);
+		}
+
+		img {
+			box-shadow: 0 8px 16px 0 rgba($c-black, .12);
+			position: relative;
+		}
+	}
+}

@@ -1,0 +1,16 @@
+.bg-off-white {
+  background: $c-off-white;
+  color: $c-black;
+
+  .headline {
+    h2 {
+      color: $c-blue-primary;
+    }
+  }
+}
+
+.bg-gradient-blue {
+  background: rgb(27, 59, 98);
+  background: linear-gradient(0deg, rgba(27, 59, 98, 1) 0%, rgba(0, 24, 56, 1) 100%);
+  color: $c-white;
+}

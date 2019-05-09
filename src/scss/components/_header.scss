@@ -1,0 +1,23 @@
+.header {
+	&__intro {
+		@include margin(50px null 40px);
+		text-align: center;
+
+		svg {
+			width: 48px;
+		}
+	}
+
+	.headline {
+		margin-bottom: 10px;
+
+		h2 {
+			color: $c-blue-primary;
+			text-transform: uppercase;
+		}
+
+		h5 {
+			font-family: $heading-font-family;
+		}
+	}
+}

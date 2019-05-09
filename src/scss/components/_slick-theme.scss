@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+// Default Variables
+
+// Slick icon entity codes outputs the following
+// '\2190' outputs ascii character '←'
+// '\2192' outputs ascii character '→'
+// '\2022' outputs ascii character '•'
+
+$slick-font-family: "slick" !default;
+$slick-arrow-color: $c-white !default;
+$slick-dot-color: $c-white !default;
+$slick-dot-color-active: $slick-dot-color !default;
+$slick-prev-character: "\2190" !default;
+$slick-next-character: "\2192" !default;
+$slick-dot-character: "\2022" !default;
+$slick-dot-size: 14px !default;
+$slick-opacity-default: 0.75 !default;
+$slick-opacity-on-hover: 1 !default;
+$slick-opacity-not-active: 0.3 !default;
+$slick-arrow-size: 42px;
+
+// Slider
+
+.slick-list {
+	.slick-loading & {
+		background: $c-white url("../img/slick/ajax-loader.gif") center center no-repeat;
+	}
+}
+
+// Dots
+
+.slick-dotted {
+	&.slick-slider {
+		// margin-bottom: 20px;
+	}
+}
+
+.slick-dots {
+	bottom: -$base-spacing * 2;
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+
+	@media only screen and (min-width: 768px) {
+		bottom: -$base-spacing * 3;
+	}
+
+	li {
+		@include size(14px);
+		cursor: pointer;
+		display: inline-block;
+		margin: 0 5px;
+		padding: 0;
+		position: relative;
+
+		button {
+			@include size(14px);
+			background: transparent;
+			border: 0;
+			color: transparent;
+			cursor: pointer;
+			display: block;
+			font-size: 0;
+			line-height: 0;
+			outline: none;
+			padding: 0;
+
+			&:hover,
+			&:focus {
+				outline: none;
+
+				svg {
+					opacity: $slick-opacity-on-hover;
+				}
+			}
+
+			svg {
+				@include size(14px);
+				fill: $c-white;
+				opacity: $slick-opacity-not-active;
+				transition: opacity 150ms ease;
+			}
+		}
+
+		&.slick-active {
+			button {
+
+				svg {
+					fill: $c-white;
+					opacity: $slick-opacity-default;
+				}
+			}
+		}
+	}
+}

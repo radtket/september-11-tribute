@@ -1,0 +1,25 @@
+figure {
+	margin: 0;
+}
+
+img,
+picture {
+	height: auto;
+	margin: 0;
+	max-width: 100%;
+}
+
+.video-wrapper {
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	position: relative;
+
+	embed,
+	object,
+	iframe,
+	video {
+		@include position(absolute, 0 null null 0);
+		@include size(100%);
+	}
+}

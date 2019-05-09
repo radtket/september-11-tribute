@@ -1,0 +1,19 @@
+.names-slider {
+	h3 {
+		color: rgba($c-black, 0.6);
+		font-size: 30px;
+		line-height: 30px * 2;
+		opacity: 0.8;
+		position: relative;
+		text-align: center;
+		transition: all 100ms ease;
+	}
+
+	.slick-center {
+		h3 {
+			color: $c-black;
+			opacity: 1;
+			transform: scale(1.5);
+		}
+	}
+}
