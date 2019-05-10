@@ -9,11 +9,11 @@
 		transition: all 100ms ease;
 	}
 
-	.slick-center {
-		h3 {
-			color: $c-black;
-			opacity: 1;
-			transform: scale(1.5);
-		}
+	h3.slick-center {
+
+		color: $c-black;
+		opacity: 1;
+		transform: scale(1.5);
+
 	}
 }
