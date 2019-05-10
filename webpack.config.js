@@ -3,16 +3,21 @@ const webpack = require("webpack");
 
 module.exports = {
 	mode: "production",
+	devtool: "source-map",
 	output: {
 		filename: "main.bundle.js"
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js?$/,
-				include: [path.resolve(__dirname, "./assets/js")],
+				test: /\.js$/,
 				exclude: /node_modules/,
-				loader: "babel-loader"
+				loader: "babel-loader",
+				include: [path.resolve(__dirname, "./assets/js")],
+				options: {
+					presets: ["@babel/preset-env"],
+					plugins: ["@babel/plugin-proposal-class-properties"]
+				}
 			}
 		]
 	},

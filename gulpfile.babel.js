@@ -3,7 +3,6 @@ import autoprefixer from "autoprefixer";
 import browsersync from "browser-sync";
 import cssnano from "cssnano";
 import del from "del";
-import eslint from "gulp-eslint";
 import htmlmin from "gulp-htmlmin";
 import imagemin from "gulp-imagemin";
 import newer from "gulp-newer";
@@ -141,16 +140,6 @@ function css() {
 		)
 		.pipe(gulp.dest(`${project.dist}/css/`))
 		.pipe(browsersync.stream());
-}
-
-// Lint scripts
-function scriptsLint() {
-	return gulp
-		.src([`${project.js}/**/*`, "./gulpfile.babel.js"])
-		.pipe(plumber())
-		.pipe(eslint())
-		.pipe(eslint.format());
-	// .pipe(eslint.failAfterError());
 }
 
 // Transpile, concatenate and minify scripts
