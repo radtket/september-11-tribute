@@ -9,7 +9,6 @@
     "build:vendor": "gulp build:vendor",
     "gulp": "gulp",
     "start": "npm run build && npm run watch",
-    "translate": "gulp translate",
     "watch": "gulp watch",
     "serve": "npm run build && gulp serve"
   },
@@ -66,11 +65,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-uglify": "1.0.2",
     "rollup": "0.41.6",
-    "stylelint-order": "^0.8.1",
-    "stylelint-scss": "^3.2.0",
-    "stylelint-selector-bem-pattern": "^2.0.0",
-    "stylelint-config-standard": "^18.2.0",
-    "stylelint": "^9.2.0",
+    "sass-lint": "^1.12.1",
     "vinyl-paths": "2.1.0"
   },
   "dependencies": {

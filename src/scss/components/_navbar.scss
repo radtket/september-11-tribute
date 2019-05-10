@@ -17,7 +17,7 @@ $navbar-height: 60px;
 		&__trigger {
 			@include padding(0);
 			background: transparent;
-			color: rgba($c-white, 0.7);
+			color: $c-white-70;
 			font-family: $secondary-font-family;
 			font-size: 18px;
 			height: $navbar-height;
@@ -46,7 +46,7 @@ $navbar-height: 60px;
 			line-height: 1;
 
 			@media only screen and (min-width: 800px) {
-				border-right: 1px solid rgba($c-white, 0.5);
+				border-right: 1px solid $c-white-50;
 				display: inline-block;
 
 				&:last-child {
@@ -62,7 +62,7 @@ $navbar-height: 60px;
 		}
 
 		&__item {
-			color: rgba($c-white, 0.75);
+			color: $c-white-70;
 			font-size: 18px;
 			position: relative;
 			text-transform: uppercase;

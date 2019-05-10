@@ -6,7 +6,7 @@
 	&::before {
 		@include size(100%);
 		@include position(absolute, 0 0 0 0);
-		background: rgba($c-white, 0.85);
+		background: $c-white-85;
 		content: "";
 	}
 

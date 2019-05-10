@@ -19,10 +19,21 @@ $c-black: #000;
 $c-off-white: #f1f2f2;
 $c-blue-primary: #111c4e;
 $c-blue-alt: #112d50;
+$c-blue-lite: #003b71;
 $c-red-primary: #e1251b;
 $dark-gray: #333;
 $medium-gray: #999;
 $light-gray: #ddd;
+
+$c-black-12: rgba($c-black, .12);
+$c-black-60: rgba($c-black, .6);
+
+$c-white-04: rgba($c-white, 0.04);
+$c-white-50: rgba($c-white, 0.5);
+$c-white-70: rgba($c-white, 0.7);
+$c-white-85: rgba($c-white, 0.85);
+
+$c-blue-alt-50: rgba($c-blue-alt, 0.5);
 
 $c-green: #75ce66;
 $c-red: #c03b44;

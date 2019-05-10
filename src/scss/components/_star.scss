@@ -17,7 +17,7 @@
 
 
 
-$star-color-default: #8D99A6;
+$star-color-default: #8d99a6;
 $star-accent-colors: ("blue": $c-blue-primary,
 	"red": $c-red-primary);
 
@@ -35,12 +35,12 @@ $star-accent-colors: ("blue": $c-blue-primary,
 	}
 
 	&::before {
-		background: linear-gradient(270deg, rgba($star-color-default, 1) 50%, transparent 100%);
+		background: linear-gradient(270deg, $star-color-default 50%, transparent 100%);
 		right: 105%;
 	}
 
 	&::after {
-		background: linear-gradient(90deg, rgba($star-color-default, 1) 50%, transparent 100%);
+		background: linear-gradient(90deg, $star-color-default 50%, transparent 100%);
 		left: 105%;
 	}
 
@@ -73,11 +73,11 @@ $color in $star-accent-colors {
 	.page-accent__#{$star-accent-name} {
 		&.page-accent {
 			&::before {
-				background: linear-gradient(270deg, rgba($color, 1) 50%, transparent 100%);
+				background: linear-gradient(270deg, $color 50%, transparent 100%);
 			}
 
 			&::after {
-				background: linear-gradient(90deg, rgba($color, 1) 50%, transparent 100%);
+				background: linear-gradient(90deg, $color 50%, transparent 100%);
 			}
 
 			svg {

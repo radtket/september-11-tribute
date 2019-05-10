@@ -225,15 +225,15 @@ $('a[href*="#"]').on("click", handleSmoothScroll);
 
 $(window).on("resize", offsetHero);
 
-$(".expander-trigger").click(function(e) {
+$(".expander__trigger").click(function(e) {
 	e.preventDefault(e);
-	$(".expander-content").slideToggle();
-	if ($(".expander-trigger__text").text() === "View Full List") {
-		$(".expander-trigger__text").text("Collapse");
-		$(this).removeClass("expander-hidden");
+	$(".expander__content").slideToggle();
+	if ($(".expander__trigger__text").text() === "View Full List") {
+		$(".expander__trigger__text").text("Collapse");
+		$(this).removeClass("expander__hidden");
 	} else {
-		$(".expander-trigger__text").text("View Full List");
-		$(this).addClass("expander-hidden");
+		$(".expander__trigger__text").text("View Full List");
+		$(this).addClass("expander__hidden");
 	}
 });
 

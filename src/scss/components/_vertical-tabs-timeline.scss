@@ -13,8 +13,8 @@ $tiny-ball-size: 6px;
 
 	.vertical-tabs {
 		// height: $vertical-tabs-height;
-		display: inline;
-		float: left;
+		// display: inline;
+		// float: left;
 		position: relative;
 		width: $vertical-tabs-nav--width;
 
@@ -36,13 +36,12 @@ $tiny-ball-size: 6px;
 		position: relative;
 
 		&:hover {
-
 			span {
 				opacity: 1;
 			}
 
 			&::after {
-				background: lighten(#003b71, 5%);
+				background: lighten($c-blue-lite, 5%);
 			}
 		}
 
@@ -60,7 +59,7 @@ $tiny-ball-size: 6px;
 
 		&::after {
 			@include size($ball-size);
-			background-color: #003b71;
+			background-color: $c-blue-lite;
 			border: 1px solid $line-color;
 			border-radius: 50%;
 			content: "";
@@ -109,6 +108,7 @@ $tiny-ball-size: 6px;
 		span {
 			color: $c-white;
 			display: block;
+			font-variant-numeric: tabular-nums;
 			opacity: 0.8;
 			padding-right: 50px;
 			position: relative;
@@ -157,7 +157,7 @@ $tiny-ball-size: 6px;
 		// display: inline-block;
 		// width: 80%;
 		align-items: center;
-		background: rgba($c-white, 0.04);
+		background: $c-white-04;
 		border: 2px solid $line-color;
 		display: flex;
 		justify-content: center;
@@ -165,9 +165,10 @@ $tiny-ball-size: 6px;
 	}
 
 	.vertical-tab-content {
+		@include padding(10px);
 		display: none;
+		max-width: 600px;
 		text-align: center;
-		width: 80%;
 
 		svg {
 			@include margin(5px auto 15px);
@@ -177,18 +178,29 @@ $tiny-ball-size: 6px;
 		}
 
 		h2 {
-			font-size: 36px;
+			font-size: 24px;
+
+			@media only screen and (min-width: 768px) {
+				font-size: 36px;
+				margin-top: 22px;
+			}
 		}
 
 		h5 {
-			font-size: 20px;
-			margin-bottom: 22px;
 			text-transform: uppercase;
 		}
 
 		p {
 			font-family: $secondary-font-family;
-			font-size: 20px;
+		}
+
+		h5,
+		p {
+			font-size: 16px;
+
+			@media only screen and (min-width: 768px) {
+				font-size: 20px;
+			}
 		}
 	}
 }

@@ -3718,6 +3718,77 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
           transform: scale(1.5);
 }
 
+.expander {
+  text-align: center;
+}
+
+.expander__trigger {
+  color: rgba(17, 45, 80, 0.5);
+  cursor: pointer;
+  display: inline-block;
+  text-align: center;
+  -webkit-transition: color 0.3s ease;
+  transition: color 0.3s ease;
+}
+
+.expander__trigger span {
+  display: block;
+  font-family: "Acumin Pro";
+  font-size: 16px;
+  font-size: 1rem;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.expander__trigger svg {
+  height: 24px;
+  opacity: 0.5;
+  stroke: #112d50;
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: opacity, -webkit-transform 0.3s ease;
+  transition: opacity, -webkit-transform 0.3s ease;
+  transition: opacity, transform 0.3s ease;
+  transition: opacity, transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+.expander__trigger:focus {
+  outline: none;
+}
+
+.expander__trigger:hover {
+  color: #112d50;
+}
+
+.expander__trigger:hover svg {
+  opacity: 1;
+}
+
+.expander__hidden svg {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.expander__hidden + .expander__content {
+  display: none;
+}
+
+.expander ul {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .expander ul {
+    width: calc(33.33333% - 26.66667px);
+    float: left;
+    margin-left: 20px;
+  }
+}
+
 .navbar {
   text-align: center;
 }
@@ -3791,7 +3862,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar .nav__item {
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
   font-size: 1.125rem;
   position: relative;
@@ -3918,9 +3989,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 @media only screen and (min-width: 768px) {
   .recognition__badges .badge__center {
-    height: 175px;
     margin-right: 40px;
     margin-left: 40px;
+    height: 175px;
   }
 }
 
@@ -4018,7 +4089,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   top: 60%;
   height: 2px;
   width: 180px;
-  background: #8D99A6;
+  background: #8d99a6;
   content: "";
 }
 
@@ -4035,7 +4106,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .page-accent svg {
-  fill: #8D99A6;
+  fill: #8d99a6;
   height: 100%;
 }
 
@@ -4053,7 +4124,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .page-accent__stars svg {
-  fill: #8D99A6;
+  fill: #8d99a6;
   height: 100%;
 }
 
@@ -4085,241 +4156,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   fill: #e1251b;
 }
 
-.cd-container {
-  margin: 0 auto;
-  max-width: 1170px;
-  width: 90%;
-}
-
-.cd-container::after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
-#cd-timeline {
-  margin-top: 36px;
-  margin-bottom: 36px;
-  padding-top: 36px;
-  padding-bottom: 36px;
-  position: relative;
-}
-
-#cd-timeline::before {
-  height: 100%;
-  width: 4px;
-  background: #f1f2f2;
-  content: "";
-  left: 18px;
-  position: absolute;
-  top: 0;
-}
-
-@media only screen and (min-width: 1170px) {
-  #cd-timeline {
-    margin-top: 48px;
-    margin-bottom: 48px;
-  }
-  #cd-timeline::before {
-    left: 50%;
-    margin-left: -2px;
-  }
-}
-
-.cd-timeline-block {
-  margin-top: 36px;
-  margin-bottom: 36px;
-  position: relative;
-}
-
-.cd-timeline-block::after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
-@media only screen and (min-width: 1170px) {
-  .cd-timeline-block {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-  .cd-timeline-block:first-child {
-    margin-top: 0;
-  }
-  .cd-timeline-block:last-child {
-    margin-bottom: 0;
-  }
-}
-
-.cd-timeline-block:nth-child(even) .cd-timeline-content {
-  float: right;
-}
-
-.cd-timeline-block:nth-child(even) .cd-timeline-content::before {
-  border-color: transparent;
-  border-right-color: #fff;
-  left: auto;
-  right: 100%;
-  top: 24px;
-}
-
-.cd-timeline-block:nth-child(even) .cd-timeline-content .cd-date {
-  left: auto;
-  right: 122%;
-  text-align: right;
-}
-
-.cd-timeline-img {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-          box-shadow: 0 0 0 4px #fff, inset 0 2px 0 rgba(0, 0, 0, 0.08), 0 3px 0 4px rgba(0, 0, 0, 0.05);
-}
-
-.cd-timeline-img img {
-  height: 24px;
-  width: 24px;
-  margin-top: -12px;
-  margin-left: -12px;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  display: block;
-}
-
-.cd-timeline-img.cd-picture {
-  background: #75ce66;
-}
-
-.cd-timeline-img.cd-movie {
-  background: #c03b44;
-}
-
-.cd-timeline-img.cd-location {
-  background: #f0ca45;
-}
-
-@media only screen and (min-width: 1170px) {
-  .cd-timeline-img {
-    height: 60px;
-    width: 60px;
-    -webkit-backface-visibility: hidden;
-    -webkit-transform: translateZ(0);
-    left: 50%;
-    margin-left: -30px;
-  }
-}
-
-.cd-timeline-content {
-  padding: 1em;
-  background: #fff;
-  border-radius: 3px;
-  -webkit-box-shadow: 0 3px 0 #f1f2f2;
-          box-shadow: 0 3px 0 #f1f2f2;
-  color: #000;
-  margin-left: 60px;
-  position: relative;
-}
-
-.cd-timeline-content::after {
-  clear: both;
-  content: "";
-  display: block;
-}
-
-.cd-timeline-content h2 {
-  color: #111c4e;
-}
-
-.cd-timeline-content p,
-.cd-timeline-content .cd-date {
-  font-size: 13px;
-  font-size: 0.8125rem;
-}
-
-.cd-timeline-content .cd-date {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  opacity: 0.7;
-}
-
-.cd-timeline-content::before {
-  height: 0;
-  width: 0;
-  position: absolute;
-  top: 16px;
-  right: 100%;
-  border: 7px solid transparent;
-  border-right: 7px solid #fff;
-  content: "";
-}
-
-@media only screen and (min-width: 768px) {
-  .cd-timeline-content h2 {
-    font-size: 20px;
-    font-size: 1.25rem;
-  }
-  .cd-timeline-content p {
-    font-size: 16px;
-    font-size: 1rem;
-  }
-  .cd-timeline-content .cd-date {
-    font-size: 14px;
-    font-size: 0.875rem;
-  }
-}
-
-@media only screen and (min-width: 1170px) {
-  .cd-timeline-content {
-    margin-left: 0;
-    padding: 24px;
-    width: 45%;
-  }
-  .cd-timeline-content::before {
-    border-color: transparent;
-    border-left-color: #fff;
-    left: 100%;
-    top: 24px;
-  }
-  .cd-timeline-content .cd-date {
-    position: absolute;
-    top: 10px;
-    left: 122%;
-    color: #fff;
-    font-size: 20px;
-    font-size: 1.25rem;
-    line-height: 1;
-    width: 100%;
-  }
-}
-
-@media only screen and (min-width: 1170px) {
-  .cssanimations .cd-timeline-img.is-hidden {
-    visibility: hidden;
-  }
-  .cssanimations .cd-timeline-img.bounce-in {
-    -webkit-animation: cd-bounce-1 0.6s;
-            animation: cd-bounce-1 0.6s;
-    visibility: visible;
-  }
-  .cssanimations .cd-timeline-block:nth-child(even) .cd-timeline-content.bounce-in {
-    -webkit-animation: cd-bounce-2-inverse 0.6s;
-            animation: cd-bounce-2-inverse 0.6s;
-  }
-  .cssanimations .cd-timeline-content.is-hidden {
-    visibility: hidden;
-  }
-  .cssanimations .cd-timeline-content.bounce-in {
-    -webkit-animation: cd-bounce-2 0.6s;
-            animation: cd-bounce-2 0.6s;
-    visibility: visible;
-  }
-}
-
 .vertical-tabs-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4334,8 +4170,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .vertical-tabs-container .vertical-tabs {
-  display: inline;
-  float: left;
   position: relative;
   width: 200px;
 }
@@ -4433,6 +4267,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .vertical-tabs-container .vertical-tab span {
   color: #fff;
   display: block;
+  font-variant-numeric: tabular-nums;
   opacity: 0.8;
   padding-right: 50px;
   position: relative;
@@ -4495,9 +4330,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .vertical-tabs-container .vertical-tab-content {
+  padding: 10px;
   display: none;
+  max-width: 600px;
   text-align: center;
-  width: 80%;
 }
 
 .vertical-tabs-container .vertical-tab-content svg {
@@ -4508,91 +4344,37 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .vertical-tabs-container .vertical-tab-content h2 {
-  font-size: 36px;
-  font-size: 2.25rem;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .vertical-tabs-container .vertical-tab-content h2 {
+    font-size: 36px;
+    font-size: 2.25rem;
+    margin-top: 22px;
+  }
 }
 
 .vertical-tabs-container .vertical-tab-content h5 {
-  font-size: 20px;
-  font-size: 1.25rem;
-  margin-bottom: 22px;
   text-transform: uppercase;
 }
 
 .vertical-tabs-container .vertical-tab-content p {
   font-family: "Acumin Pro";
-  font-size: 20px;
-  font-size: 1.25rem;
 }
 
-.expander {
-  text-align: center;
-}
-
-.expander .expander-trigger {
-  color: rgba(17, 45, 80, 0.5);
-  cursor: pointer;
-  display: inline-block;
-  text-align: center;
-  -webkit-transition: color 0.3s ease;
-  transition: color 0.3s ease;
-}
-
-.expander .expander-trigger span {
-  display: block;
-  font-family: "Acumin Pro";
+.vertical-tabs-container .vertical-tab-content h5,
+.vertical-tabs-container .vertical-tab-content p {
   font-size: 16px;
   font-size: 1rem;
-  margin-bottom: 12px;
-  text-transform: uppercase;
-}
-
-.expander .expander-trigger svg {
-  height: 24px;
-  opacity: 0.5;
-  stroke: #112d50;
-  -webkit-transform: rotate(180deg);
-          transform: rotate(180deg);
-  -webkit-transition: opacity, -webkit-transform 0.3s ease;
-  transition: opacity, -webkit-transform 0.3s ease;
-  transition: opacity, transform 0.3s ease;
-  transition: opacity, transform 0.3s ease, -webkit-transform 0.3s ease;
-}
-
-.expander .expander-trigger:focus {
-  outline: none;
-}
-
-.expander .expander-trigger:hover {
-  color: #112d50;
-}
-
-.expander .expander-trigger:hover svg {
-  opacity: 1;
-}
-
-.expander .expander-hidden svg {
-  -webkit-transform: rotate(0deg);
-          transform: rotate(0deg);
-}
-
-.expander .expander-hidden + .expander-content {
-  display: none;
-}
-
-.expander ul {
-  width: calc(100% - 40px);
-  float: left;
-  margin-left: 20px;
-  font-size: 20px;
-  font-size: 1.25rem;
 }
 
 @media only screen and (min-width: 768px) {
-  .expander ul {
-    width: calc(33.33333% - 26.66667px);
-    float: left;
-    margin-left: 20px;
+  .vertical-tabs-container .vertical-tab-content h5,
+  .vertical-tabs-container .vertical-tab-content p {
+    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 

@@ -1,19 +1,79 @@
 .names-slider {
 	h3 {
-		color: rgba($c-black, 0.6);
+		color: $c-black-60;
 		font-size: 30px;
 		line-height: 30px * 2;
 		opacity: 0.8;
 		position: relative;
 		text-align: center;
 		transition: all 100ms ease;
+
+		&.slick-center {
+			color: $c-black;
+			opacity: 1;
+			transform: scale(1.5);
+		}
+	}
+}
+
+
+
+.expander {
+	text-align: center;
+
+	&__trigger {
+		color: $c-blue-alt-50;
+		cursor: pointer;
+		display: inline-block;
+		text-align: center;
+		transition: color 0.3s ease;
+
+		span {
+			display: block;
+			font-family: $secondary-font-family;
+			font-size: 16px;
+			margin-bottom: 12px;
+			text-transform: uppercase;
+		}
+
+		svg {
+			height: 24px;
+			opacity: 0.5;
+			stroke: $c-blue-alt;
+			transform: rotate(180deg);
+			transition: opacity, transform 0.3s ease;
+		}
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+			color: $c-blue-alt;
+
+			svg {
+				opacity: 1;
+			}
+		}
 	}
 
-	h3.slick-center {
+	&__hidden {
 
-		color: $c-black;
-		opacity: 1;
-		transform: scale(1.5);
+		svg {
+			transform: rotate(0deg);
+		}
 
+		+.expander__content {
+			display: none;
+		}
+	}
+
+	ul {
+		@include grid-column(12);
+		font-size: 20px;
+
+		@media only screen and (min-width: 768px) {
+			@include grid-column(4);
+		}
 	}
 }
