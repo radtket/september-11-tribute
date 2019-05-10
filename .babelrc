@@ -1,15 +1,19 @@
 {
-  "presets": [
-    [
-      "env",
-      {
-        "targets": {
-          "browsers": ["IE >= 11"]
-        },
-        "useBuiltIns": "usage",
-        "debug": true
-      }
-    ],
-  ],
-  "retainLines": true
+  "presets": ["env"]
 }
+
+// {
+//   "presets": [
+//     [
+//       "env",
+//       {
+//         "targets": {
+//           "browsers": ["IE >= 11"]
+//         },
+//         "useBuiltIns": "usage",
+//         "debug": true
+//       }
+//     ],
+//   ],
+//   "retainLines": true
+// }

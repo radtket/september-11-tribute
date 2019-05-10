@@ -1,4 +1,4 @@
-import Gumshoe from "gumshoejs";
+// import Gumshoe from "gumshoejs";
 
 const initScrollSpy = Gumshoe(".nav--primary a", {
 	offset() {

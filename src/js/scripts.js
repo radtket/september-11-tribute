@@ -1,6 +1,5 @@
 /* eslint-disable func-names */
 import $ from "jquery";
-import WOW from "wow.js";
 
 import handleSmoothScroll from "./_smooth-scroll";
 import stickyNavInit from "./_sticky-nav";
@@ -14,7 +13,7 @@ $(document).ready(() => {
 	initTimeline();
 	stickyNavInit();
 	offsetHero();
-	new WOW().init();
+	// new WOW().init();
 });
 
 $('a[href*="#"]').on("click", handleSmoothScroll);

@@ -4,6 +4,7 @@
 # Dependency directories
 node_modules
 docs/video
+src/video
 dist
 
 ### macOS ###
