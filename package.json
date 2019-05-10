@@ -74,7 +74,6 @@
     "normalize.css": "^8.0.1"
   },
   "dependencies": {
-    "gumshoejs": "^5.1.1",
     "jquery": "3.2.1",
     "slick-carousel": "^1.8.1",
     "wow.js": "^1.2.2"

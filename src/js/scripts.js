@@ -5,7 +5,7 @@ import handleSmoothScroll from "./_smooth-scroll";
 import stickyNavInit from "./_sticky-nav";
 import initTimeline from "./_timeline";
 import offsetHero from "./_offsetHero";
-import "./_scollspy";
+import initScrollSpy from "./_scollspy";
 import "./_sliders";
 import "./_vertical-timeline";
 
@@ -13,6 +13,7 @@ $(document).ready(() => {
 	initTimeline();
 	stickyNavInit();
 	offsetHero();
+	initScrollSpy();
 	// new WOW().init();
 });
 
