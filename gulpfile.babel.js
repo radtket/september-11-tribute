@@ -32,24 +32,6 @@ project.scss = `${project.assets}/scss`;
 project.node = `${project.root}/node_modules`;
 project.vendor = `${project.assets}/vendor`;
 
-function browserSync() {
-	// watch files
-	const files = [
-		`${project.assets}/*.html`,
-		`${project.scss}/**/*`,
-		`${project.js}/**/*`,
-		`${project.img}/**/*`
-	];
-	browsersync.init(files, {
-		server: {
-			baseDir: `${project.dist}/`
-		},
-		port: 3000,
-		// Inject CSS changes
-		injectChanges: true
-	});
-}
-
 // BrowserSync Reload
 function browserSyncReload(done) {
 	browsersync.reload();
@@ -407,13 +389,6 @@ function buildVendorModernizr() {
 
 // watch
 function watch() {
-	gulp.watch(`${project.scss}/**/*.scss`, buildCss);
-	gulp.watch(`${project.js}/**/*.js`, buildJs);
-	gulp.watch(`${project.img}/**/*`, buildImg);
-}
-
-// serve
-function serveFiles() {
 	gulp.watch(
 		`${project.scss}/**/*.scss`,
 		gulp.series(buildCss, browserSyncReload)
@@ -421,9 +396,27 @@ function serveFiles() {
 	gulp.watch(`${project.js}/**/*.js`, gulp.series(buildJs, browserSyncReload));
 	gulp.watch(`${project.img}/**/*`, gulp.series(buildImg, browserSyncReload));
 	gulp.watch(
-		`${project.dist}/*.html`,
+		`${project.assets}/*.html`,
 		gulp.series(buildHtml, browserSyncReload)
 	);
+}
+
+// serve
+function serveFiles() {
+	const files = [
+		`${project.assets}/*.html`,
+		`${project.scss}/**/*`,
+		`${project.js}/**/*`,
+		`${project.img}/**/*`
+	];
+	browsersync.init(files, {
+		server: {
+			baseDir: `${project.dist}/`
+		},
+		port: 3000,
+		// Inject CSS changes
+		injectChanges: true
+	});
 }
 
 const buildVendor = gulp.series(buildVendorCopyFromNpm, buildVendorModernizr);
@@ -439,7 +432,7 @@ const build = gulp.series(
 	gulp.parallel(buildHtml, buildImg, buildCss, buildJs)
 );
 
-const serve = gulp.parallel(serveFiles, browserSync);
+const serve = gulp.parallel(serveFiles, watch);
 
 export {
 	build,
