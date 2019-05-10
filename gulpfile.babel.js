@@ -27,6 +27,7 @@ project.fonts = `${project.assets}/fonts`;
 project.img = `${project.assets}/img`;
 project.js = `${project.assets}/js`;
 project.pdf = `${project.assets}/pdf`;
+project.video = `${project.assets}/video`;
 project.scss = `${project.assets}/scss`;
 project.node = `${project.root}/node_modules`;
 project.vendor = `${project.assets}/vendor`;
@@ -85,6 +86,15 @@ function pdf() {
 		.pipe(gulp.dest(`${project.dist}/pdf/`));
 }
 
+// Copy Video Assets
+function video() {
+	const { newer } = gulpPlugins;
+	return gulp
+		.src(`${project.video}/**/*`)
+		.pipe(newer(`${project.dist}/video/`))
+		.pipe(gulp.dest(`${project.dist}/video/`));
+}
+
 // Copy Font Assets
 function fonts() {
 	return gulp
@@ -101,7 +111,7 @@ function favicon() {
 function buildHtml() {
 	const { htmlmin, rename } = gulpPlugins;
 	return gulp
-		.src(`${project.assets}/index.html`)
+		.src(`${project.assets}/*.html`)
 		.pipe(htmlmin({ collapseWhitespace: true }))
 		.pipe(gulp.dest(`${project.dist}`))
 		.pipe(rename({ extname: ".aspx" }))
@@ -423,8 +433,9 @@ const build = gulp.series(
 	buildVendor,
 	copyVendor,
 	favicon,
-	pdf,
 	fonts,
+	pdf,
+	video,
 	gulp.parallel(buildHtml, buildImg, buildCss, buildJs)
 );
 

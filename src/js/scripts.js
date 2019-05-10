@@ -14,7 +14,6 @@ $(document).ready(() => {
 	stickyNavInit();
 	offsetHero();
 	initScrollSpy();
-	// new WOW().init();
 });
 
 $('a[href*="#"]').on("click", handleSmoothScroll);
