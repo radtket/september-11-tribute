@@ -12,7 +12,14 @@
     "watch": "gulp watch",
     "serve": "npm run build && gulp serve"
   },
-  "author": "Taylor Radtke",
+  "company": {
+    "name": "Booz Allen Hamilton",
+    "url": "https://www.boozallen.com/"
+  },
+  "author": {
+    "name": "Taylor Radtke",
+    "contact": "radtke_taylor@bah.com"
+  },
   "license": "ISC",
   "devDependencies": {
     "animate.css": "^3.7.0",

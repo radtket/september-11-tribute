@@ -42,10 +42,10 @@ const banner = `/*!
  * DO NOT OVERRIDE THIS FILE.
  * Generated with \`npm run build\`
  *
- * ${pkg.description} - ${pkg.author.shorthandUrl}
+ * ${pkg.name} - ${pkg.company.name}
  * @version ${pkg.version}
  * @author ${pkg.author.name}
- * @link ${pkg.author.url}
+ * @contact ${pkg.author.contact}
  */
  `;
 
