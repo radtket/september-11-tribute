@@ -3,6 +3,7 @@
  * Generated with `npm run build`
  *
  * ice-september-eleven - Booz Allen Hamilton
+ * one page website honoring HSI personnel who supported recovery and security eff­orts following the September 11th attacks
  * @version 1.0.0
  * @author Taylor Radtke
  * @contact radtke_taylor@bah.com
@@ -480,105 +481,25 @@ template {
   font-weight: 600;
 }
 
-@-webkit-keyframes cd-bounce-1 {
+@-webkit-keyframes spinner {
   0% {
-    opacity: 0;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
-@keyframes cd-bounce-1 {
+@keyframes spinner {
   0% {
-    opacity: 0;
-    -webkit-transform: scale(0.5);
-            transform: scale(0.5);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-
-@-webkit-keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes cd-bounce-2 {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(-100px);
-            transform: translateX(-100px);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(20px);
-            transform: translateX(20px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@-webkit-keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(-20px);
-            transform: translateX(-20px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes cd-bounce-2-inverse {
-  0% {
-    opacity: 0;
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
-  }
-  60% {
-    opacity: 1;
-    -webkit-transform: translateX(-20px);
-            transform: translateX(-20px);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
   }
 }
 
@@ -3496,10 +3417,28 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   }
 }
 
-.document--item img {
+.document--item > a {
+  color: #fff;
+}
+
+.document--item > a img {
   -webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.12);
           box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.12);
+}
+
+.document--item > a img,
+.document--item > a figcaption {
   position: relative;
+  -webkit-transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+}
+
+.document--item > a:hover img,
+.document--item > a:hover figcaption {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
 }
 
 .flag-quote {
@@ -3596,6 +3535,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin-left: calc(8.33333% - 21.66667px + 40px);
   padding-right: 10px;
   padding-left: 10px;
+  margin-bottom: 40px;
   position: relative;
 }
 
@@ -3668,7 +3608,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .header__intro svg {
-  width: 48px;
+  width: 28px;
+}
+
+@media only screen and (min-width: 550px) {
+  .header__intro svg {
+    width: 48px;
+  }
 }
 
 .header .headline {
@@ -3696,6 +3642,166 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   display: block;
   margin: 0 auto;
   z-index: -1;
+}
+
+.inmemorium-tabs__nav::after {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+.inmemorium-tabs__nav--item {
+  width: calc(100% - 40px);
+  float: left;
+  margin-left: 20px;
+  margin-bottom: 42px;
+  text-align: center;
+}
+
+@media only screen and (min-width: 550px) {
+  .inmemorium-tabs__nav--item {
+    width: calc(50% - 30px);
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .inmemorium-tabs__nav--item {
+    width: calc(25% - 25px);
+    float: left;
+    margin-left: 20px;
+  }
+}
+
+.inmemorium-tabs__nav--item a {
+  display: inline-block;
+  opacity: 0.7;
+  outline: 0;
+  position: relative;
+  -webkit-transition: opacity 0.3s, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: opacity 0.3s, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: opacity 0.3s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+  transition: opacity 0.3s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s, -webkit-transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+}
+
+.inmemorium-tabs__nav--item a:hover {
+  opacity: 1;
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+}
+
+.inmemorium-tabs__nav--item a.active {
+  opacity: 1;
+}
+
+.inmemorium-tabs__nav--item figcaption {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.inmemorium-tabs__nav--item figcaption span {
+  font-size: 16px;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.inmemorium-tabs__nav--item img {
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  height: 250px;
+}
+
+.inmemorium-tabs .inmemorium-tabs__content--item {
+  padding: 10px;
+  text-align: center;
+}
+
+.inmemorium-tabs .inmemorium-tabs__content--item h2 {
+  font-size: 46px;
+  font-size: 2.875rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+.inmemorium-tabs .inmemorium-tabs__content--item h2 span {
+  font-size: 24px;
+  font-size: 1.5rem;
+  line-height: 1;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.inmemorium-tabs .inmemorium-tabs__content--item p {
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+@media only screen and (min-width: 550px) {
+  .inmemorium-tabs .inmemorium-tabs__content--item p {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .inmemorium-tabs .inmemorium-tabs__content--item p {
+    font-size: 22px;
+    font-size: 1.375rem;
+  }
+}
+
+.inmemorium-tabs .page-accent__stars {
+  margin-bottom: 42px;
+}
+
+.flag-accent {
+  margin-bottom: 42px;
+  position: relative;
+  z-index: 0;
+}
+
+.flag-accent::after {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #f1f2f2;
+  background: -webkit-gradient(linear, left top, right top, from(#f1f2f2), color-stop(50%, transparent), to(#f1f2f2));
+  background: linear-gradient(90deg, #f1f2f2 0%, transparent 50%, #f1f2f2 100%);
+  content: "";
+  z-index: 0;
+}
+
+.flag-accent::before {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-image: url("../img/backgrounds/usa-flag.jpg");
+  content: "";
+  z-index: -1;
+}
+
+.flag-accent img {
+  display: block;
+  height: 350px;
+  margin: auto;
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
 }
 
 .names-slider h3 {
@@ -3790,6 +3896,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar {
+  min-height: 60px;
+  position: relative;
   text-align: center;
 }
 
@@ -3804,39 +3912,19 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar .nav {
+  padding-top: 60px;
+  padding-bottom: 24px;
+  display: none;
   line-height: 60px;
   line-height: 3.75rem;
   margin: auto;
 }
 
-.navbar .nav__trigger {
-  padding: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.7);
-  font-family: "Acumin Pro";
-  font-size: 18px;
-  font-size: 1.125rem;
-  height: 60px;
-  line-height: 60px;
-  line-height: 3.75rem;
-  position: relative;
-  text-transform: uppercase;
-  top: 2px;
-  -webkit-transition: color 0.5s;
-  transition: color 0.5s;
-}
-
-.navbar .nav__trigger:hover {
-  color: #fff;
-}
-
-.navbar .nav__trigger:focus {
-  outline: 0;
-}
-
-@media only screen and (min-width: 800px) {
-  .navbar .nav__trigger {
-    display: none;
+@media only screen and (min-width: 1150px) {
+  .navbar .nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: block;
   }
 }
 
@@ -3847,7 +3935,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   line-height: 1;
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 1150px) {
   .navbar .nav li {
     border-right: 1px solid rgba(255, 255, 255, 0.5);
     display: inline-block;
@@ -3862,6 +3950,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .navbar .nav__item {
+  padding-right: 24px;
+  padding-left: 24px;
   color: rgba(255, 255, 255, 0.7);
   font-size: 18px;
   font-size: 1.125rem;
@@ -3872,35 +3962,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   transition: color 0.5s;
 }
 
-@media only screen and (min-width: 800px) {
-  .navbar .nav__item {
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-}
-
-@media only screen and (min-width: 870px) {
-  .navbar .nav__item {
-    padding-right: 16px;
-    padding-left: 16px;
-  }
-}
-
-@media only screen and (min-width: 1024px) {
-  .navbar .nav__item {
-    padding-right: 24px;
-    padding-left: 24px;
-  }
-}
-
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1350px) {
   .navbar .nav__item {
     padding-right: 36px;
     padding-left: 36px;
   }
 }
 
-@media only screen and (min-width: 1300px) {
+@media only screen and (min-width: 1500px) {
   .navbar .nav__item {
     padding-right: 48px;
     padding-left: 48px;
@@ -3914,6 +3983,100 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .navbar .nav__item:focus, .navbar .nav__item:hover {
   color: #fff;
   outline: none;
+}
+
+.hamburger {
+  position: absolute;
+  top: 15px;
+  right: 24px;
+  height: 30px;
+  width: 40px;
+  display: block;
+  z-index: 2;
+}
+
+@media only screen and (min-width: 1150px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+.hamburger__inner {
+  height: 6px;
+  width: 40px;
+  background: #fff;
+  display: block;
+  margin-top: 12px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.hamburger__inner::before, .hamburger__inner::after {
+  height: 6px;
+  width: 40px;
+  background: #fff;
+  content: "";
+  display: block;
+  position: absolute;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+}
+
+.hamburger__inner::before {
+  top: 0;
+}
+
+.hamburger__inner::after {
+  top: 24px;
+}
+
+.hamburger--open .hamburger__inner {
+  background: none;
+}
+
+.hamburger--open .hamburger__inner::before, .hamburger--open .hamburger__inner::after {
+  top: 12px;
+}
+
+.hamburger--open .hamburger__inner::before {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.hamburger--open .hamburger__inner::after {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.page-loader {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: #fff;
+  display: block;
+  z-index: 100000;
+}
+
+.loader {
+  margin-top: -24px;
+  margin-left: -24px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 48px;
+  width: 48px;
+  -webkit-animation: spinner 700ms infinite linear;
+          animation: spinner 700ms infinite linear;
+  border: 1px solid rgba(17, 45, 80, 0.25);
+  border-left: 1px solid rgba(17, 45, 80, 0.75);
+  border-radius: 50%;
+  text-indent: -12345px;
+  z-index: 100001;
 }
 
 .recognition article {
@@ -4080,17 +4243,30 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
  */
 .page-accent {
   display: inline-block;
-  height: 30px;
+  height: 18px;
   position: relative;
+}
+
+@media only screen and (min-width: 550px) {
+  .page-accent {
+    height: 30px;
+  }
 }
 
 .page-accent::before, .page-accent::after {
   position: absolute;
   top: 60%;
   height: 2px;
-  width: 180px;
+  width: 108px;
   background: #8d99a6;
   content: "";
+}
+
+@media only screen and (min-width: 550px) {
+  .page-accent::before, .page-accent::after {
+    height: 2px;
+    width: 180px;
+  }
 }
 
 .page-accent::before {
@@ -4157,16 +4333,33 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .vertical-tabs-container {
+  margin-top: 88px;
+  margin-bottom: 88px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-top: 80px;
+  position: relative;
+}
+
+.vertical-tabs-container::before, .vertical-tabs-container::after {
+  height: 64px;
+  width: 2px;
+  position: absolute;
+  left: 117px;
+  background: #fff;
+  content: "";
+}
+
+.vertical-tabs-container::before {
+  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(0, #fff), to(transparent));
+  background: linear-gradient(0, #fff 0, transparent 100%);
+  top: -64px;
 }
 
 .vertical-tabs-container::after {
-  clear: both;
-  content: "";
-  display: block;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff), to(transparent));
+  background: linear-gradient(180deg, #fff 0, transparent 100%);
+  bottom: -64px;
 }
 
 .vertical-tabs-container .vertical-tabs {
@@ -4276,14 +4469,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 }
 
 .vertical-tabs-container .vertical-tab span::before, .vertical-tabs-container .vertical-tab span::after {
-  height: 6px;
-  width: 6px;
+  height: 2px;
+  width: 2px;
   position: absolute;
-  top: 6px;
+  top: 7px;
   background: #fff;
+  border: 3px solid #fff;
   border-radius: 50%;
   content: "";
-  margin-top: 1px;
 }
 
 .vertical-tabs-container .vertical-tab span::before {
@@ -4294,8 +4487,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   left: 157px;
   -webkit-transform: translateY(0);
           transform: translateY(0);
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
+  -webkit-transition: width 0.5s, border 0.5s;
+  transition: width 0.5s, border 0.5s;
 }
 
 .vertical-tabs-container .vertical-tab.is-active::after {
@@ -4309,6 +4502,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .vertical-tabs-container .vertical-tab.is-active span::after {
   height: 2px;
   width: 45px;
+  border: 0;
   border-radius: 0;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
@@ -4340,7 +4534,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   margin: 5px auto 15px;
   display: block;
   fill: #fff;
-  height: 65px;
+  height: 35px;
 }
 
 .vertical-tabs-container .vertical-tab-content h2 {
@@ -4376,6 +4570,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     font-size: 20px;
     font-size: 1.25rem;
   }
+}
+
+.vertical-tabs-container .vertical-tab-content img {
+  margin: 15px auto;
 }
 
 /*# sourceMappingURL=main.css.map */

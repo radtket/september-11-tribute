@@ -4,6 +4,7 @@
 		@include grid-column(10);
 		@include grid-push(1);
 		@include padding(null 10px);
+		margin-bottom: 40px;
 		position: relative;
 	}
 

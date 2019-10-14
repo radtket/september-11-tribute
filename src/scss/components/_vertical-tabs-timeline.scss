@@ -5,11 +5,32 @@ $vertical-tabs-height: 785px;
 $vertical-tabs-nav--width: 200px;
 $border-size: 2px;
 $tiny-ball-size: 6px;
+$faded-line: 64px;
 
 .vertical-tabs-container {
-	@include clearfix;
+	// @include clearfix;
+	// margin-top: 80px;
+	@include margin(($faded-line + $base-spacing) null);
 	display: flex;
-	margin-top: 80px;
+	position: relative;
+
+	&::before,
+	&::after {
+		@include size($border-size, $faded-line);
+		@include position(absolute, null null null 117px);
+		background: $line-color;
+		content: "";
+	}
+
+	&::before {
+		background: linear-gradient(0, $line-color 0, transparent 100%);
+		top: -$faded-line;
+	}
+
+	&::after {
+		background: linear-gradient(180deg, $line-color 0, transparent 100%);
+		bottom: -$faded-line;
+	}
 
 	.vertical-tabs {
 		// height: $vertical-tabs-height;
@@ -116,12 +137,12 @@ $tiny-ball-size: 6px;
 
 			&::before,
 			&::after {
-				@include size($tiny-ball-size);
-				@include position(absolute, $tiny-ball-size null null null);
+				@include size(2px);
+				@include position(absolute, 7px null null null);
 				background: $line-color;
+				border: 3px solid $line-color;
 				border-radius: 50%;
 				content: "";
-				margin-top: $border-size * 0.5;
 			}
 
 			&::before {
@@ -131,7 +152,7 @@ $tiny-ball-size: 6px;
 			&::after {
 				left: $ball-line-inactive - ($tiny-ball-size / 2) + $ball-line-inactive;
 				transform: translateY(0);
-				transition: all 0.5s;
+				transition: width 0.5s, border 0.5s;
 			}
 		}
 
@@ -145,6 +166,7 @@ $tiny-ball-size: 6px;
 
 				&::after {
 					@include size(45px, $border-size);
+					border: 0;
 					border-radius: 0;
 					transform: translateY($border-size);
 				}
@@ -174,7 +196,7 @@ $tiny-ball-size: 6px;
 			@include margin(5px auto 15px);
 			display: block;
 			fill: $c-white;
-			height: 65px;
+			height: 35px;
 		}
 
 		h2 {
@@ -201,6 +223,10 @@ $tiny-ball-size: 6px;
 			@media only screen and (min-width: 768px) {
 				font-size: 20px;
 			}
+		}
+
+		img {
+			@include margin(15px auto);
 		}
 	}
 }

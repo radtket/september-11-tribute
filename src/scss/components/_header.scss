@@ -4,7 +4,11 @@
 		text-align: center;
 
 		svg {
-			width: 48px;
+			width: 28px;
+
+			@media only screen and (min-width: 550px) {
+				width: 48px;
+			}
 		}
 	}
 

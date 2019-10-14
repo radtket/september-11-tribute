@@ -12,9 +12,26 @@
 			@include grid-column(4);
 		}
 
-		img {
-			box-shadow: 0 8px 16px 0 $c-black-12;
-			position: relative;
+		>a {
+			color: $c-white;
+
+			img {
+				box-shadow: 0 8px 16px 0 $c-black-12;
+			}
+
+			img,
+			figcaption {
+				position: relative;
+				transition: transform .4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+			}
+
+			&:hover {
+
+				img,
+				figcaption {
+					transform: translateY(-5px);
+				}
+			}
 		}
 	}
 }

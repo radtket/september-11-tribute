@@ -1,0 +1,19 @@
+.page-loader {
+	@include size(100%);
+	@include position(fixed, 0);
+	background: $c-white;
+	display: block;
+	z-index: 100000;
+}
+
+.loader {
+	@include margin((-$base-spacing) null null (-$base-spacing));
+	@include position(absolute, 50% null null 50%);
+	@include size($base-spacing * 2);
+	animation: spinner 700ms infinite linear;
+	border: 1px solid $c-blue-alt-25;
+	border-left: 1px solid $c-blue-alt-75;
+	border-radius: 50%;
+	text-indent: -12345px;
+	z-index: 100001;
+}

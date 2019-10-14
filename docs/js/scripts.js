@@ -3,6 +3,7 @@
  * Generated with `npm run build`
  *
  * ice-september-eleven - Booz Allen Hamilton
+ * one page website honoring HSI personnel who supported recovery and security eff­orts following the September 11th attacks
  * @version 1.0.0
  * @author Taylor Radtke
  * @contact radtke_taylor@bah.com
@@ -156,6 +157,56 @@ var initScrollSpy = function () {
 	});
 };
 
+var initMobileNav = function () {
+	var menuToggle = $("#js-mobile-trigger").unbind();
+	menuToggle.on("click", function (e) {
+		menuToggle.toggleClass("hamburger--open");
+		e.preventDefault();
+		$("#js-navigation-menu").slideToggle(function () {
+			if ($("#js-navigation-menu").is(":hidden")) {
+				$("#js-navigation-menu").removeAttr("style");
+			}
+		});
+	});
+};
+
+/* eslint-disable func-names */
+var initInMemoriumTabs = function () {
+	$(".inmemorium-tabs__nav--item:first-child  > a").addClass("active");
+
+	var TabsContent = $(".inmemorium-tabs__content--item");
+	TabsContent.hide();
+	TabsContent.first().show();
+
+	var NavItems = $(".inmemorium-tabs__nav--item > a");
+
+	NavItems.click(function() {
+		NavItems.removeClass("active");
+		$(this).addClass("active");
+
+		TabsContent.hide();
+
+		var activeTab = $(this).attr("href");
+		$(activeTab).fadeIn();
+		return false;
+	});
+};
+
+/* eslint-disable func-names */
+var initNamesListExpander = function () {
+	$(".expander__trigger").click(function(e) {
+		e.preventDefault(e);
+		$(".expander__content").slideToggle();
+		if ($(".expander__trigger__text").text() === "View Full List") {
+			$(".expander__trigger__text").text("Collapse");
+			$(this).removeClass("expander__hidden");
+		} else {
+			$(".expander__trigger__text").text("View Full List");
+			$(this).addClass("expander__hidden");
+		}
+	});
+};
+
 $(".names-slider").slick({
 	adaptiveHeight: true,
 	arrows: false,
@@ -214,28 +265,28 @@ $(".js-vertical-tab").click(function(e) {
 });
 
 /* eslint-disable func-names */
+$(window).on("load", function () {
+	$("body").imagesLoaded(function () {
+		$(".page-loader div").fadeOut();
+		$(".page-loader")
+			.delay(200)
+			.fadeOut("slow");
+	});
+});
+
 $(document).ready(function () {
 	initTimeline();
 	stickyNavInit();
 	offsetHero();
 	initScrollSpy();
+	initMobileNav();
+	initInMemoriumTabs();
+	initNamesListExpander();
 });
 
-$('a[href*="#"]').on("click", handleSmoothScroll);
+$('a.nav__item[href*="#"]').on("click", handleSmoothScroll);
 
 $(window).on("resize", offsetHero);
-
-$(".expander__trigger").click(function(e) {
-	e.preventDefault(e);
-	$(".expander__content").slideToggle();
-	if ($(".expander__trigger__text").text() === "View Full List") {
-		$(".expander__trigger__text").text("Collapse");
-		$(this).removeClass("expander__hidden");
-	} else {
-		$(".expander__trigger__text").text("View Full List");
-		$(this).addClass("expander__hidden");
-	}
-});
 
 Object.defineProperty(exports, '__esModule', { value: true });
 

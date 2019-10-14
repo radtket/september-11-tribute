@@ -1,6 +1,12 @@
 $navbar-height: 60px;
+$hamburger-height: 30px;
+$hamburger-width: 40px;
+$hamburger-layer--height: 6px;
+$hamburger-color: $c-white;
 
 .navbar {
+	min-height: $navbar-height;
+	position: relative;
 	text-align: center;
 
 	&.sticky {
@@ -11,41 +17,27 @@ $navbar-height: 60px;
 	}
 
 	.nav {
+		@include padding($navbar-height null $base-spacing);
+		display: none;
 		line-height: $navbar-height;
 		margin: auto;
 
-		&__trigger {
-			@include padding(0);
-			background: transparent;
-			color: $c-white-70;
-			font-family: $secondary-font-family;
-			font-size: 18px;
-			height: $navbar-height;
-			line-height: $navbar-height;
-			position: relative;
-			text-transform: uppercase;
-			top: 2px;
-			transition: color 0.5s;
 
-			&:hover {
-				color: $c-white;
-			}
-
-			&:focus {
-				outline: 0;
-			}
-
-			@media only screen and (min-width: 800px) {
-				display: none;
-			}
+		@media only screen and (min-width: 1150px) {
+			@include padding(0 null);
+			display: block;
 		}
+
+
 
 		li {
 			@include padding(10px null);
 			display: block;
 			line-height: 1;
 
-			@media only screen and (min-width: 800px) {
+
+
+			@media only screen and (min-width: 1150px) {
 				border-right: 1px solid $c-white-50;
 				display: inline-block;
 
@@ -53,6 +45,7 @@ $navbar-height: 60px;
 					border-right: 0;
 				}
 			}
+
 
 			&.active {
 				.nav__item {
@@ -62,6 +55,7 @@ $navbar-height: 60px;
 		}
 
 		&__item {
+			@include padding(null 24px);
 			color: $c-white-70;
 			font-size: 18px;
 			position: relative;
@@ -69,23 +63,11 @@ $navbar-height: 60px;
 			top: 3px;
 			transition: color 0.5s;
 
-			@media only screen and (min-width: 800px) {
-				@include padding(null 10px);
-			}
-
-			@media only screen and (min-width: 870px) {
-				@include padding(null 16px);
-			}
-
-			@media only screen and (min-width: 1024px) {
-				@include padding(null 24px);
-			}
-
-			@media only screen and (min-width: 1200px) {
+			@media only screen and (min-width: 1350px) {
 				@include padding(null 36px);
 			}
 
-			@media only screen and (min-width: 1300px) {
+			@media only screen and (min-width: 1500px) {
 				@include padding(null 48px);
 			}
 
@@ -97,6 +79,64 @@ $navbar-height: 60px;
 			&:hover {
 				color: $c-white;
 				outline: none;
+			}
+		}
+	}
+}
+
+
+
+.hamburger {
+	@include position(absolute, 15px $base-spacing null null);
+	@include size($hamburger-width, $hamburger-height);
+	display: block;
+	z-index: 2;
+
+	@media only screen and (min-width: 1150px) {
+		display: none;
+	}
+
+	&__inner {
+		@include size($hamburger-width, $hamburger-layer--height);
+		background: $hamburger-color;
+		display: block;
+		margin-top: $hamburger-layer--height * 2;
+		transition: all 0.4s ease-in-out;
+
+		&::before,
+		&::after {
+			@include size($hamburger-width, $hamburger-layer--height);
+			background: $hamburger-color;
+			content: "";
+			display: block;
+			position: absolute;
+			transition: all 0.4s ease-in-out;
+			z-index: -1;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			top: $hamburger-layer--height * 4;
+		}
+
+		// Clicked State
+		.hamburger--open & {
+			background: none;
+
+			&::before,
+			&::after {
+				top: $hamburger-layer--height * 2;
+			}
+
+			&::before {
+				transform: rotate(-45deg);
+			}
+
+			&::after {
+				transform: rotate(45deg);
 			}
 		}
 	}

@@ -15,23 +15,31 @@
  *
  */
 
-
-
+$star-size--mobile: 18px;
+$star-size: 30px;
 $star-color-default: #8d99a6;
 $star-accent-colors: ("blue": $c-blue-primary,
 	"red": $c-red-primary);
 
 .page-accent {
 	display: inline-block;
-	height: 30px;
+	height: $star-size--mobile;
 	position: relative;
+
+	@media only screen and (min-width: 550px) {
+		height: $star-size;
+	}
 
 	&::before,
 	&::after {
 		@include position(absolute, 60% null null null);
-		@include size(180px, 2px);
+		@include size(($star-size--mobile * 6), 2px);
 		background: $star-color-default;
 		content: "";
+
+		@media only screen and (min-width: 550px) {
+			@include size(($star-size * 6), 2px);
+		}
 	}
 
 	&::before {

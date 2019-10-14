@@ -43,6 +43,7 @@ const banner = `/*!
  * Generated with \`npm run build\`
  *
  * ${pkg.name} - ${pkg.company.name}
+ * ${pkg.description}
  * @version ${pkg.version}
  * @author ${pkg.author.name}
  * @contact ${pkg.author.contact}

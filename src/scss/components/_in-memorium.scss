@@ -1,0 +1,126 @@
+.inmemorium-tabs {
+	&__nav {
+		@include grid-container;
+
+		&--item {
+			@include grid-column(12);
+			margin-bottom: 42px;
+			text-align: center;
+
+			@media only screen and (min-width: 550px) {
+				@include grid-column(6);
+			}
+
+			@media only screen and (min-width: 1024px) {
+				@include grid-column(3);
+			}
+
+			a {
+				display: inline-block;
+				opacity: 0.7;
+				outline: 0;
+				position: relative;
+				transition: opacity 0.3s, transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s;
+
+				&:hover {
+					opacity: 1;
+					transform: translateY(-5px);
+				}
+
+				&.active {
+					opacity: 1;
+				}
+			}
+
+			figcaption {
+				font-size: 20px;
+				font-weight: 600;
+
+				span {
+					font-size: 16px;
+					font-weight: 400;
+					line-height: 1;
+					text-transform: uppercase;
+				}
+			}
+
+			img {
+				@include margin(null auto $small-spacing);
+				height: 250px;
+			}
+		}
+	}
+
+	.inmemorium-tabs {
+		&__content {
+			&--item {
+				padding: 10px;
+				text-align: center;
+
+				h2 {
+					font-size: 46px;
+					font-weight: 600;
+					margin-bottom: $base-spacing;
+
+					span {
+						font-size: 24px;
+						line-height: 1;
+						margin-bottom: $small-spacing / 2;
+						text-transform: uppercase;
+					}
+				}
+
+				p {
+					font-size: 16px;
+					line-height: 1.6;
+					margin-bottom: 24px;
+
+
+					@media only screen and (min-width: 550px) {
+						font-size: 20px;
+					}
+
+					@media only screen and (min-width: 768px) {
+						font-size: 22px;
+					}
+				}
+			}
+		}
+	}
+
+	.page-accent__stars {
+		margin-bottom: 42px;
+	}
+}
+
+.flag-accent {
+	margin-bottom: 42px;
+	position: relative;
+	z-index: 0;
+
+	&::after {
+		@include size(100%);
+		@include position(absolute, 0);
+		background: $c-off-white;
+		background: linear-gradient(90deg, $c-off-white 0%, transparent 50%, $c-off-white 100%);
+		content: "";
+		z-index: 0;
+	}
+
+	&::before {
+		@include size(100%);
+		@include position(absolute, 0);
+		background-image: url("../img/backgrounds/usa-flag.jpg");
+		content: "";
+		z-index: -1;
+	}
+
+	img {
+		display: block;
+		height: 350px;
+		margin: auto;
+		max-width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+}

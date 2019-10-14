@@ -2,7 +2,7 @@
   "_args": [
     [
       "wow.js@1.2.2",
-      "/Users/taylorradtke/Desktop/BAH"
+      "/Users/taylorradtke/september-11-tribute"
     ]
   ],
   "_from": "wow.js@1.2.2",
@@ -26,7 +26,7 @@
   ],
   "_resolved": "https://registry.npmjs.org/wow.js/-/wow.js-1.2.2.tgz",
   "_spec": "1.2.2",
-  "_where": "/Users/taylorradtke/Desktop/BAH",
+  "_where": "/Users/taylorradtke/september-11-tribute",
   "bugs": {
     "url": "https://github.com/graingert/WOW/issues"
   },

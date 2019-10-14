@@ -1,20 +1,19 @@
 @include font-face("Acumin Pro", "../fonts/acumin-pro/Acumin-RPro", ("woff", "otf")) {
-  font-style: normal;
-  font-weight: 400;
+	font-style: normal;
+	font-weight: 400;
 }
 
 @include font-face("Acumin Pro", "../fonts/acumin-pro/Acumin-BdPro", ("woff", "otf")) {
-  font-style: bold;
-  font-weight: 600;
+	font-style: bold;
+	font-weight: 600;
 }
 
-
 @include font-face("AdobeTextPro", "../fonts/adobe-text-pro/AdobeTextPro-Regular", ("woff", "ttf")) {
-  font-style: normal;
-  font-weight: 400;
+	font-style: normal;
+	font-weight: 400;
 }
 
 @include font-face("AdobeTextPro", "../fonts/adobe-text-pro/AdobeTextPro-Bold", ("woff", "ttf")) {
-  font-style: bold;
-  font-weight: 600;
+	font-style: bold;
+	font-weight: 600;
 }

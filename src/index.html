@@ -9,11 +9,10 @@
 	<title>BAH Demo</title>
 
 	<!-- Favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-	<link rel="manifest" href="/site.webmanifest" />
-	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#e1251b" />
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+	<link rel="mask-icon" href="safari-pinned-tab.svg" color="#e1251b" />
 	<meta name="msapplication-TileColor" content="#ffffff" />
 	<meta name="theme-color" content="#ffffff" />
 
@@ -23,6 +22,9 @@
 </head>
 
 <body>
+	<div class="page-loader block">
+		<div class="loader">Loading...</div>
+	</div>
 	<main class="page-content">
 		<header class="header">
 			<div class="container--fluid">
@@ -48,7 +50,14 @@
 		</header>
 		<nav class="navbar bg-gradient-blue">
 			<div class="container--fluid">
-				<ul class="nav nav--primary">
+
+				<a id="js-mobile-trigger" class="hamburger" href="#">
+					<div class="hamburger__inner"></div>
+				</a>
+
+				<!-- <a id="js-mobile-trigger" class="nav__trigger" href="javascript:void(0)">Menu</a> -->
+
+				<ul id="js-navigation-menu" class="nav nav--primary">
 					<li>
 						<a class="nav__item" href="#introduction">Introduction</a>
 					</li>
@@ -63,6 +72,9 @@
 					</li>
 					<li>
 						<a class="nav__item" href="#timeline">Timeline</a>
+					</li>
+					<li>
+						<a class="nav__item" href="#inmemorium">In Memorium</a>
 					</li>
 					<li>
 						<a class="nav__item" href="#resources">Resources</a>
@@ -101,9 +113,10 @@
 					</div>
 				</figure>
 				<figure class="recognition__badges">
-					<img alt="" class="wow fadeInLeft badge__left" src="img/badges/badge-DOJ.png" />
-					<img alt="" class="wow fadeInUp badge__center" src="img/badges/badge-HSI.png" />
-					<img alt="" class="wow fadeInRight badge__right" src="img/badges/badge-UCS.png" />
+					<img class="wow fadeInLeft badge__left" data-wow-delay=".5s" src="img/badges/badge-DOJ.svg" alt="Badge DOJ" />
+					<img class="wow fadeInUp badge__center" data-wow-delay=".5s" src="img/badges/badge-HSI.png" alt="Badge HSI" />
+					<img class="wow fadeInRight badge__right" data-wow-delay=".5s" src="img/badges/badge-UCS.svg"
+						alt="Badge UCS" />
 				</figure>
 				<article>
 					<div class="headline">
@@ -178,7 +191,7 @@
 				</div>
 				<div class="video">
 					<div class="video-wrapper">
-						<video controls preload="auto">
+						<video controls preload="auto" poster="img/video-poster.png">
 							<source src="video/911-video.mp4" type="video/mp4" />
 						</video>
 					</div>
@@ -303,7 +316,7 @@
 					<h3>John S. Ballman</h3>
 					<h3>Kevin Barry</h3>
 					<h3>Dave Bearon</h3>
-					<h3>X. Beck</h3>
+					<h3>Jack Beck</h3>
 					<h3>Rob Berger</h3>
 					<h3>Eric Bloom</h3>
 					<h3>Shirley Blount</h3>
@@ -312,15 +325,15 @@
 					<h3>Juan Bortenfeld</h3>
 					<h3>Andrew Boss</h3>
 					<h3>Douglas Bothof</h3>
-					<h3>T. Brent</h3>
+					<h3>Tom Brent</h3>
 					<h3>Edwin Brigantty</h3>
 					<h3>Scott Brown</h3>
 					<h3>Carl Brownholtz</h3>
 					<h3>Robert Broyles</h3>
 					<h3>Thomas Bruno</h3>
 					<h3>Clarence Bugayong</h3>
-					<h3>X. Burns</h3>
-					<h3>Joe Calvacia</h3>
+					<h3>Scott Burns</h3>
+					<h3>Joe Calvacla</h3>
 					<h3>Anthony Campos</h3>
 					<h3>Enzo Cannizzo</h3>
 					<h3>Bob Capridelio</h3>
@@ -335,7 +348,7 @@
 					<h3>Marcos Castro</h3>
 					<h3>Ken Cates</h3>
 					<h3>Joseph Cerar</h3>
-					<h3>S. Cerutti</h3>
+					<h3>Steve Cerutti</h3>
 					<h3>David Chan</h3>
 					<h3>Eric Chan</h3>
 					<h3>X. Chan</h3>
@@ -349,7 +362,7 @@
 					<h3>Karen Connelly</h3>
 					<h3>Stephen Cook</h3>
 					<h3>Miseal Correa Jr.</h3>
-					<h3>N. Cortes</h3>
+					<h3>Nelson Cortes</h3>
 					<h3>Teresa Courtney</h3>
 					<h3>Leonard Coy</h3>
 					<h3>Eric Crago</h3>
@@ -414,14 +427,14 @@
 					<h3>Kenneth Hawsey</h3>
 					<h3>Daniel Hayden</h3>
 					<h3>Judith Healy</h3>
-					<h3>X. Hekel</h3>
+					<h3>Jane Hekel</h3>
 					<h3>X. Hennelly</h3>
 					<h3>Robert Henridge</h3>
 					<h3>Brian Herbert</h3>
 					<h3>Miguel Herrera</h3>
 					<h3>Christopher Herzog</h3>
 					<h3>Corey Hill</h3>
-					<h3>X. Holcomb</h3>
+					<h3>Jason Holcomb</h3>
 					<h3>Josef Holzer</h3>
 					<h3>Drew Houlihan</h3>
 					<h3>Ken Howaniec</h3>
@@ -436,11 +449,11 @@
 					<h3>Darrell Ivey</h3>
 					<h3>Ruth Jackson</h3>
 					<h3>Carl Jaigobind</h3>
-					<h3>D. Johnson</h3>
+					<h3>Denise Johnson</h3>
 					<h3>Margaret Jordan</h3>
 					<h3>Roger Joseph</h3>
 					<h3>William K.</h3>
-					<h3>John Kaine</h3>
+					<h3>John Kane</h3>
 					<h3>James Kaley</h3>
 					<h3>John Karszen</h3>
 					<h3>Alan Kashinsky</h3>
@@ -461,7 +474,7 @@
 					<h3>Michael Lepore</h3>
 					<h3>Meredith Leung</h3>
 					<h3>Michael Leung</h3>
-					<h3>X. Licitra</h3>
+					<h3>Rosanne Licitra</h3>
 					<h3>Darlene Line</h3>
 					<h3>Kaysandra Lockhart</h3>
 					<h3>Andrew Long</h3>
@@ -473,7 +486,7 @@
 					<h3>Vincent Luongo</h3>
 					<h3>George Ma</h3>
 					<h3>Joseph Macchiaroli</h3>
-					<h3>Steve MacMartin</h3>
+					<h3>S. Mackinnon</h3>
 					<h3>Frank Madelina</h3>
 					<h3>Mark Madenfort</h3>
 					<h3>Ernie Magana</h3>
@@ -512,17 +525,16 @@
 					<h3>Tim Moynihan</h3>
 					<h3>Juan Munoz</h3>
 					<h3>Jared Murphey</h3>
-					<h3>Patrick N.</h3>
-					<h3>Paul Nepolitan</h3>
+					<h3>Patrick Newry</h3>
+					<h3>Phil Nepolitan</h3>
 					<h3>Shawn Newman</h3>
 					<h3>Nell Newman</h3>
 					<h3>Alan Nordman</h3>
 					<h3>Michael O'Brien</h3>
 					<h3>Carl Olds</h3>
 					<h3>Kevin O'Malley</h3>
-					<h3>Terence Opiola</h3>
+					<h3>Terrence Opiola</h3>
 					<h3>Osbert Orduna</h3>
-					<h3>Robert P.</h3>
 					<h3>John Padilla</h3>
 					<h3>Monica Padilla</h3>
 					<h3>Doug Panning</h3>
@@ -550,7 +562,7 @@
 					<h3>Nicholas Raudenski</h3>
 					<h3>John Reddin</h3>
 					<h3>Arthur Reifke</h3>
-					<h3>M. Rey</h3>
+					<h3>Marie Rey</h3>
 					<h3>Joseph Rivera</h3>
 					<h3>Ken Roberts</h3>
 					<h3>Keith Roberts</h3>
@@ -581,7 +593,7 @@
 					<h3>Ronald Suess</h3>
 					<h3>Bernard Sullivan</h3>
 					<h3>Steven Sutherland</h3>
-					<h3>X. Tobon</h3>
+					<h3>John Tobon</h3>
 					<h3>Eugene Tortora</h3>
 					<h3>Steve Trent</h3>
 					<h3>Dianna Tsang</h3>
@@ -600,7 +612,7 @@
 					<h3>John Volpe</h3>
 					<h3>Mike Walsh</h3>
 					<h3>Lee Wattenbarger</h3>
-					<h3>Joseph Webbert</h3>
+					<h3>Joseph Webber</h3>
 					<h3>Robert Weber</h3>
 					<h3>E. Weioz</h3>
 					<h3>Matt White</h3>
@@ -608,11 +620,11 @@
 					<h3>Bob Williams</h3>
 					<h3>Thomas Wischerth</h3>
 					<h3>Jamarle Worlids</h3>
-					<h3>Steve Yagopa</h3>
+					<h3>Steve Yagode</h3>
 					<h3>Kitty Yiu</h3>
 					<h3>Chance Youngs</h3>
 					<h3>James Zammit</h3>
-					<h3>T. Zimmerman</h3>
+					<h3>Tina Zimmerman</h3>
 				</section>
 				<div class="expander">
 					<a class="expander__trigger expander__hidden" href="javascript:void(0)"><span
@@ -642,7 +654,7 @@
 							<li>John S. Ballman</li>
 							<li>Kevin Barry</li>
 							<li>Dave Bearon</li>
-							<li>X. Beck</li>
+							<li>Jack Beck</li>
 							<li>Rob Berger</li>
 							<li>Eric Bloom</li>
 							<li>Shirley Blount</li>
@@ -651,15 +663,15 @@
 							<li>Juan Bortenfeld</li>
 							<li>Andrew Boss</li>
 							<li>Douglas Bothof</li>
-							<li>T. Brent</li>
+							<li>Tom Brent</li>
 							<li>Edwin Brigantty</li>
 							<li>Scott Brown</li>
 							<li>Carl Brownholtz</li>
 							<li>Robert Broyles</li>
 							<li>Thomas Bruno</li>
 							<li>Clarence Bugayong</li>
-							<li>X. Burns</li>
-							<li>Joe Calvacia</li>
+							<li>Scott Burns</li>
+							<li>Joe Calvacla</li>
 							<li>Anthony Campos</li>
 							<li>Enzo Cannizzo</li>
 							<li>Bob Capridelio</li>
@@ -674,7 +686,7 @@
 							<li>Marcos Castro</li>
 							<li>Ken Cates</li>
 							<li>Joseph Cerar</li>
-							<li>S. Cerutti</li>
+							<li>Steve Cerutti</li>
 							<li>David Chan</li>
 							<li>Eric Chan</li>
 							<li>X. Chan</li>
@@ -688,7 +700,7 @@
 							<li>Karen Connelly</li>
 							<li>Stephen Cook</li>
 							<li>Miseal Correa Jr.</li>
-							<li>N. Cortes</li>
+							<li>Nelson Cortes</li>
 							<li>Teresa Courtney</li>
 							<li>Leonard Coy</li>
 							<li>Eric Crago</li>
@@ -734,6 +746,7 @@
 							<li>Charles Fredricks</li>
 							<li>Vincente Garcia</li>
 						</ul>
+
 						<ul>
 							<li>James Garr</li>
 							<li>Lori Gee</li>
@@ -755,14 +768,14 @@
 							<li>Kenneth Hawsey</li>
 							<li>Daniel Hayden</li>
 							<li>Judith Healy</li>
-							<li>X. Hekel</li>
+							<li>Jane Hekel</li>
 							<li>X. Hennelly</li>
 							<li>Robert Henridge</li>
 							<li>Brian Herbert</li>
 							<li>Miguel Herrera</li>
 							<li>Christopher Herzog</li>
 							<li>Corey Hill</li>
-							<li>X. Holcomb</li>
+							<li>Jason Holcomb</li>
 							<li>Josef Holzer</li>
 							<li>Drew Houlihan</li>
 							<li>Ken Howaniec</li>
@@ -777,11 +790,11 @@
 							<li>Darrell Ivey</li>
 							<li>Ruth Jackson</li>
 							<li>Carl Jaigobind</li>
-							<li>D. Johnson</li>
+							<li>Denise Johnson</li>
 							<li>Margaret Jordan</li>
 							<li>Roger Joseph</li>
 							<li>William K.</li>
-							<li>John Kaine</li>
+							<li>John Kane</li>
 							<li>James Kaley</li>
 							<li>John Karszen</li>
 							<li>Alan Kashinsky</li>
@@ -802,7 +815,7 @@
 							<li>Michael Lepore</li>
 							<li>Meredith Leung</li>
 							<li>Michael Leung</li>
-							<li>X. Licitra</li>
+							<li>Rosanne Licitra</li>
 							<li>Darlene Line</li>
 							<li>Kaysandra Lockhart</li>
 							<li>Andrew Long</li>
@@ -814,7 +827,7 @@
 							<li>Vincent Luongo</li>
 							<li>George Ma</li>
 							<li>Joseph Macchiaroli</li>
-							<li>Steve MacMartin</li>
+							<li>S. Mackinnon</li>
 							<li>Frank Madelina</li>
 							<li>Mark Madenfort</li>
 							<li>Ernie Magana</li>
@@ -844,9 +857,10 @@
 							<li>Alvin Medina</li>
 							<li>Mark Meeks</li>
 							<li>Marlon Miller</li>
-							<li>Michael Modrak</li>
 						</ul>
+
 						<ul>
+							<li>Michael Modrak</li>
 							<li>Tom Moffett</li>
 							<li>Carlos Morales</li>
 							<li>Sharon Morrisette</li>
@@ -855,17 +869,16 @@
 							<li>Tim Moynihan</li>
 							<li>Juan Munoz</li>
 							<li>Jared Murphey</li>
-							<li>Patrick N.</li>
-							<li>Paul Nepolitan</li>
+							<li>Patrick Newry</li>
+							<li>Phil Nepolitan</li>
 							<li>Shawn Newman</li>
 							<li>Nell Newman</li>
 							<li>Alan Nordman</li>
 							<li>Michael O'Brien</li>
 							<li>Carl Olds</li>
 							<li>Kevin O'Malley</li>
-							<li>Terence Opiola</li>
+							<li>Terrence Opiola</li>
 							<li>Osbert Orduna</li>
-							<li>Robert P.</li>
 							<li>John Padilla</li>
 							<li>Monica Padilla</li>
 							<li>Doug Panning</li>
@@ -893,7 +906,7 @@
 							<li>Nicholas Raudenski</li>
 							<li>John Reddin</li>
 							<li>Arthur Reifke</li>
-							<li>M. Rey</li>
+							<li>Marie Rey</li>
 							<li>Joseph Rivera</li>
 							<li>Ken Roberts</li>
 							<li>Keith Roberts</li>
@@ -924,7 +937,7 @@
 							<li>Ronald Suess</li>
 							<li>Bernard Sullivan</li>
 							<li>Steven Sutherland</li>
-							<li>X. Tobon</li>
+							<li>John Tobon</li>
 							<li>Eugene Tortora</li>
 							<li>Steve Trent</li>
 							<li>Dianna Tsang</li>
@@ -943,7 +956,7 @@
 							<li>John Volpe</li>
 							<li>Mike Walsh</li>
 							<li>Lee Wattenbarger</li>
-							<li>Joseph Webbert</li>
+							<li>Joseph Webber</li>
 							<li>Robert Weber</li>
 							<li>E. Weioz</li>
 							<li>Matt White</li>
@@ -951,11 +964,11 @@
 							<li>Bob Williams</li>
 							<li>Thomas Wischerth</li>
 							<li>Jamarle Worlids</li>
-							<li>Steve Yagopa</li>
+							<li>Steve Yagode</li>
 							<li>Kitty Yiu</li>
 							<li>Chance Youngs</li>
 							<li>James Zammit</li>
-							<li>T. Zimmerman</li>
+							<li>Tina Zimmerman</li>
 						</ul>
 					</div>
 				</div>
@@ -996,14 +1009,14 @@
 					</div>
 					<div class="vertical-tab-content-container">
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="09-11-01a">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>September 11, 2001</h5>
 							<h2>America is Attacked</h2>
@@ -1016,19 +1029,19 @@
 								Flight 93, crashed in a Pennsylvania field during an attempt
 								by flight crew and passengers to regain control of the plane.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/AmericaIsAttacked_300.jpg" />
+
+							<img alt="" src="img/timeline-photos/AmericaIsAttacked_300.jpg" />
 							</p>
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="09-11-01b">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>September 11, 2001</h5>
 							<h2>Evacuation from WTC 6</h2>
@@ -1037,19 +1050,19 @@
 								evacuation of 800 Customs employees from the US Customhouse
 								located at WTC 6.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/JohnMartugeEvacsWTC6smolders_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/JohnMartugeEvacsWTC6smolders_300.jpg" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="09-19-01">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>September 19, 2001</h5>
 							<h2>Terrorism Response Task Force Created</h2>
@@ -1061,19 +1074,19 @@
 								Federal Aviation Administration on commercial flights until a
 								sufficient number of air marshals were trained.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/TerrorismResponseTaskForce_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/TerrorismResponseTaskForce_300.jpg" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="09-20-01">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>September 20, 2001</h5>
 							<h2>
@@ -1085,19 +1098,19 @@
 								investigation of the Pentagon, Twin Towers, and Shanksville,
 								PA attacks.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/INSagents_300.png" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/INSagents_300.png" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="09-21-01">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>September 21, 2001</h5>
 							<h2>Customs Agents Arrive at Ground Zero</h2>
@@ -1107,19 +1120,19 @@
 								search for human remains, evidence, and sensitive information
 								in government buildings.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/CAgentsArriveGroundZero_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/CAgentsArriveGroundZero_300.jpg" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="10-08-01">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>October 8, 2001</h5>
 							<h2>Office of Homeland Security Created</h2>
@@ -1130,19 +1143,19 @@
 								the implementation of a comprehensive national strategy to
 								secure the United States from terrorist threats and attacks."
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/OfficeOfHSCreatedBush_300.png" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/OfficeOfHSCreatedBush_300.png" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="11-04-01">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>November 4, 2001</h5>
 							<h2>Customs Agents Arrive at Fresh Kills</h2>
@@ -1153,19 +1166,19 @@
 								for evidence. More than one million tons of materials from the
 								World Trade Center is sorted at Fresh Kills.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/CAgentsArriveFreshKills_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/CAgentsArriveFreshKills_300.jpg" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="11-05-01">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>November 5, 2001</h5>
 							<h2>Ground Zero Evidence Tested for Hazardous Materials</h2>
@@ -1177,19 +1190,19 @@
 								and find that materials from Ground Zero contain up to 25%
 								chrysotile asbestos.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/GroundZeroEvidence_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/GroundZeroEvidence_300.jpg" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="02-26-02">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>February 26, 2002</h5>
 							<h2>Agents Report Back to Regular Duty</h2>
@@ -1197,19 +1210,19 @@
 								Agents serving at recovery sites across New York and border
 								entry points across the country return to regular duty.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/AgentsReportBk_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/AgentsReportBk_300.jpg" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="04-23-02">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>April 23, 2002</h5>
 							<h2>Congress Thanks Customs Agents</h2>
@@ -1219,19 +1232,19 @@
 								Office for their hard work, commitment, and compassion during
 								and immediately after the attacks.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/CongressThanksCustomsAgents_300.png" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/CongressThanksCustomsAgents_300.png" />
+
 						</div>
 						<div class="js-vertical-tab-content vertical-tab-content animated fadeIn" id="11-25-02">
-							<svg height="65" width="30" xmlns="http://www.w3.org/2000/svg">
+							<svg viewbox="0 0 59 127.44" xmlns="http://www.w3.org/2000/svg">
 								<path
-									d="M17.9 21.2H30v2.7H17.9v-2.7zm0 5.2H30V29H17.9v-2.6zm0-10.3H30v2.7H17.9v-2.7zm0-5.2H30v2.7H17.9v-2.7zm0 20.6H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9v-2.7zm0 5.1H30v2.7H17.9V52zm0 5.2H30v2.7H17.9v-2.7zm0 5.1H30V65H17.9v-2.7z">
-								</path>
+									d="M35.16 41.64H59v5.24H35.16zM35.16 51.7H59v5.24H35.16zM35.16 31.53H59v5.24H35.16zM35.16 21.42H59v5.24H35.16zM35.16 61.76H59v5.25H35.16zM35.16 71.83H59v5.24H35.16zM35.16 81.89H59v5.25H35.16zM35.16 91.95H59v5.24H35.16zM35.16 102.02H59v5.24H35.16zM35.16 112.08H59v5.25H35.16zM35.16 122.14H59v5.24H35.16z"
+									fill="#ffffff"></path>
 								<path
-									d="M0 10.9V65h12.1V10.9H0zm7.2 51.2l-1.1-.8-1.1.8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.1.8.4 1.3zm-.5-6.9l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.4.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.8-1 .7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.7l.4 1.3-1.1-.9-1 .9.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.8zm0-5.6l.4 1.3-1.1-.9-1 .8.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1-.8-1.1.7.4-1.3-1.1-.8h1.4l.4-1.3.4 1.3h1.4l-1.2.9zm0-5.6l.4 1.3-1.1-.8-1 .8.4-1.3-1.1-.9h1.4l.4-1.3.4 1.3h1.4l-1.2.9z">
-								</path>
-								<path d="M23.7 0h.5v10.9h-.5V0z"></path>
+									d="M0 21.47v106h23.84v-106zm14.1 100.36l-2.18-1.59-2.18 1.59.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7l-2.18 1.6zm-.83-13.62l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.54.83-2.58-2.17-1.6h2.69l.83-2.56.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.5.83-2.58-2.17-1.6h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.6-2.18 1.6.83-2.58-2.17-1.73h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58L11.92 65l-2.18 1.61.83-2.61-2.17-1.57h2.69l.83-2.57.83 2.57h2.7zm0-11l.83 2.58L11.92 54l-2.18 1.57.83-2.57-2.17-1.61h2.69l.83-2.58.83 2.58h2.7zm0-11l.83 2.58-2.18-1.59-2.18 1.33.83-2.53-2.17-1.65h2.69l.83-2.58.83 2.58h2.7zm0-11.05l.83 2.59-2.18-1.6-2.18 1.6.83-2.59-2.17-1.85h2.69l.83-2.58.83 2.58h2.7z"
+									fill="#ffffff"></path>
+								<path d="M46.63 0h.9v21.47h-.9z" fill="#ffffff"></path>
 							</svg>
 							<h5>November 25, 2002</h5>
 							<h2>Department of Homeland Security Created</h2>
@@ -1240,19 +1253,300 @@
 								Homeland Security, bringing together 22 federal departments
 								and agencies in an effort to unify homeland security efforts.
 							</p>
-							<p>
-								<img alt="" src="img/timeline-photos/DeptHSCreated_300.jpg" />
-							</p>
+
+							<img alt="" src="img/timeline-photos/DeptHSCreated_300.jpg" />
+
 						</div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="scrollspy page-section bg-off-white" id="resources">
+
+		<section class="scrollspy page-section bg-off-white" id="inmemorium">
 			<div class="container">
 				<figure class="page-accent__wrap">
 					<div class="page-accent page-accent__blue">
+						<svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M26.08 31.76l-9.96-7.4L6.3 32l3.66-12.22L0 12.37l12.22-.15L15.88 0l3.9 12.13L32 11.99l-9.82 7.64 3.9 12.13z">
+							</path>
+						</svg>
+					</div>
+				</figure>
+				<div class="headline">
+					<h2>In Memorium</h2>
+				</div>
+
+
+				<div class="inmemorium-tabs">
+
+					<nav class="inmemorium-tabs__nav row">
+
+						<figure class="inmemorium-tabs__nav--item">
+							<a href="#tab1">
+								<img src="img/inmemorium/dennis-mccarthy.jpg" alt="Special Agent: Dennis Patrick McCarthy">
+								<figcaption>
+									<span class="d-block">Special Agent</span>
+									Dennis Patrick McCarthy
+								</figcaption>
+							</a>
+						</figure>
+
+						<figure class="inmemorium-tabs__nav--item">
+							<a href="#tab2">
+								<img src="img/inmemorium/thomas-michael-wischerth.jpg" alt="Special Agent: Thomas Michael Wischerth">
+								<figcaption>
+									<span class="d-block">Special Agent</span>
+									Thomas Michael Wischerth
+								</figcaption>
+							</a>
+						</figure>
+
+						<figure class="inmemorium-tabs__nav--item">
+							<a href="#tab3">
+								<img src="img/inmemorium/robert-williams.jpg" alt="Special Agent: Robert T. Williams">
+								<figcaption>
+									<span class="d-block">Special Agent</span>
+									Robert T. Williams
+								</figcaption>
+							</a>
+						</figure>
+						<figure class="inmemorium-tabs__nav--item">
+							<a href="#tab4">
+								<img src="img/inmemorium/edward-smith.jpg" alt="Special Agent: Edward Joseph Smith">
+								<figcaption>
+									<span class="d-block">Special Agent</span>
+									Edward Joseph Smith
+								</figcaption>
+							</a>
+						</figure>
+
+					</nav>
+					<!-- tabs-nav -->
+
+					<figure class="page-accent__stars"><svg viewBox="0 0 155.02 19.12" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M83.66 18.98l-6.08-4.43-5.99 4.57 2.24-7.3-6.08-4.43 7.46-.09L77.44 0l2.37 7.25 7.46-.09-5.99 4.57 2.38 7.25zM117.53 18.98l-6.08-4.43-5.98 4.57 2.23-7.3-6.08-4.43 7.46-.09 2.23-7.3 2.38 7.25 7.46-.09-5.99 4.57 2.37 7.25zM151.41 18.98l-6.08-4.43-5.99 4.57 2.23-7.3-6.08-4.43 7.46-.09 2.24-7.3 2.37 7.25 7.46-.09-5.99 4.57 2.38 7.25zM15.91 18.98l-6.07-4.43-5.99 4.57 2.23-7.3L0 7.39l7.46-.09L9.69 0l2.38 7.25 7.46-.09-5.99 4.57 2.37 7.25zM49.79 18.98l-6.08-4.43-5.99 4.57 2.23-7.3-6.08-4.43 7.46-.09L43.56 0l2.38 7.25 7.46-.09-5.99 4.57 2.38 7.25z">
+							</path>
+						</svg></figure>
+
+					<div class="inmemorium-tabs__content">
+						<div class="inmemorium-tabs__content--item animated fadeIn" id="tab1">
+							<figure class="flag-accent">
+								<img src="img/inmemorium/dennis-mccarthy.jpg" alt="Special Agent: Dennis Patrick McCarthy">
+							</figure>
+
+							<h2>
+								<span class="d-block">Special Agent</span>
+								Dennis Patrick McCarthy
+							</h2>
+							<p>
+								<strong>
+									Special Agent Dennis McCarthy worked for both the U.S. Immigration and Naturalization Service and
+									U.S. Customs Service, where he was employed on the morning of September 11, 2001. With his
+									colleagues at his side, SA McCarthy was called upon in the immediate aftermath of the attacks to
+									help secure the site of the nearly destroyed U.S. Custom House at Ground Zero in New York City. In
+									the weeks and months that followed, Special Agent McCarthy became ill, and it was this illness that
+									ultimately claimed his life.</strong>
+							</p>
+
+							<p>
+								Throughout his time as a Special Agent with the Customs Service, and later U.S. Immigration and
+								Customs Enforcement, SA McCarthy distinguished himself as a case-maker, mentor, and leader. He had a
+								tremendous work ethic as an investigator, and certainly his share of on the job stories. One that was
+								noted by Director Vitello was a day in late September 1996, when SA McCarthy, then a special agent
+								with the JFK office, was one of several teams that went out on an early morning operation to execute
+								ten simultaneous arrest and search warrants in Brooklyn, New York. The targeted criminal organization
+								smuggled cocaine from Guyana into the United States and was responsible for distributing the crack
+								cocaine that fueled violent crime throughout the New York area at that time. As assigned, SA McCarthy
+								approached a first floor apartment for one of the subjects, Wayne Butters. After a forced entry of the
+								residence, Butters emerged from a back bedroom in a darkened hallway with a loaded 9mm Ruger pointed
+								at the entry team. SA McCarthy and other agents fired down the hallway towards Butters, who then
+								attempted to flee out a back window, leaving an infant child behind in the room. In the ensuing
+								confusion and darkness, two more children emerged into hallway of the small apartment. SA McCarthy
+								acted swiftly to lead them out of the dangerous situation, guiding the children out of the residence
+								to safety, potentially saving young lives. This case, although just a memory more than 20 years later,
+								resulted in multiple arrests that day; multiple handgun seizures; the seizure of drugs, including 500
+								grams of cocaine concealed in the infant’s crib; and three children were kept from harm’s way during a
+								volatile situation.
+							</p>
+
+							<p>
+								His tireless work ethic as an investigator was surpassed only by the care and concern he displayed for
+								his fellow agents and those around him. SA Dennis McCarthy was laid to rest Friday with full honors,
+								that of which is bestowed to those who lose their lives in the line of duty. He is survived by his
+								wife, Rosemary; his daughters, Erin, Meghan, and Caitlin Picht and her husband Alex and their newborn
+								daughter, Lillian Rose.
+							</p>
+
+
+						</div>
+						<div class="inmemorium-tabs__content--item animated fadeIn" id="tab2">
+
+							<figure class="flag-accent">
+								<img src="img/inmemorium/thomas-michael-wischerth.jpg" alt="Special Agent: Thomas Michael Wischerth">
+							</figure>
+
+							<h2>
+								<span class="d-block">Special Agent</span>
+								Thomas Michael Wischerth
+							</h2>
+							<p><strong>Special Agent Thomas Wischerth died as the result of cancer that he developed following his
+									assignment to the recovery efforts at the Fresh Kills landfill site following the 9/11 Terrorist
+									Attacks on the World Trade Center in New York City.</strong></p>
+
+							<p>Special Agent Wischerth is survived by his wife and two children.</p>
+
+							<p>On the morning of September 11th, 2001, seventy-two officers from a total of eight local, state, and
+								federal agencies were killed when terrorist hijackers working for the al Qaeda terrorist network, headed
+								by Osama bin Laden, crashed four hijacked planes into the World Trade Center towers in New York City,
+								the Pentagon in Arlington, Virginia, and a field near Shanksville, Pennsylvania.</p>
+
+							<p>After the impact of the first plane into the World Trade Center's North Tower, putting the safety of
+								others before their own, law enforcement officers along with fire and EMS personnel, rushed to the
+								burning Twin Towers of the World Trade Center to aid the victims and lead them to safety. Due to their
+								quick actions, it is estimated that over 25,000 people were saved.</p>
+
+							<p>As the evacuation continued, the South Tower unexpectedly collapsed as a result of the intense fire
+								caused by the impact. The North Tower collapsed a short time later. Seventy-one law enforcement
+								officers, 343 members of the New York City Fire Department and over 2,800 civilians were killed at the
+								World Trade Center site.</p>
+
+							<p>A third hijacked plane crashed into a field in rural Pennsylvania when the passengers attempted to
+								re-take control of the plane. One law enforcement officer, who was a passenger on the plane, was killed
+								in that crash.</p>
+
+							<p>The fourth hijacked plane was crashed into the Pentagon in Arlington, Virginia, killing almost 200
+								military and civilian personnel. No law enforcement officers were killed at the Pentagon on 9/11.</p>
+
+							<p>The terrorist attacks resulted in the declaration of war against the Taliban regime, the illegal rulers
+								of Afghanistan, and the al Qaeda terrorist network which also was based in Afghanistan.</p>
+
+							<p>On September 9th, 2005, all of the public safety officers killed on September 11th, 2001, were
+								posthumously awarded the 9/11 Heroes Medal of Valor by President George W. Bush.</p>
+
+							<p>The contamination in the air at the World Trade Center site caused many rescue personnel to become
+								extremely ill and eventually led to the death of several rescue workers.</p>
+
+							<p>On May 1st, 2011 members of the United States military conducted a raid on a compound in Abbottabad,
+								Pakistan, and killed Osama bin Laden.</p>
+
+						</div>
+						<div class="inmemorium-tabs__content--item animated fadeIn" id="tab3">
+							<figure class="flag-accent">
+								<img src="img/inmemorium/robert-williams.jpg" alt="Special Agent: Robert T. Williams">
+							</figure>
+
+							<h2>
+								<span class="d-block">Special Agent</span>
+								Robert T. Williams
+							</h2>
+							<p><strong>Special Agent Robert Williams died as the result of cancer that he developed following his
+									assignment
+									to the recovery efforts at the Fresh Kills landfill site following the 9/11 Terrorist Attacks on the
+									World Trade Center in New York City.</strong></p>
+
+							<p>Special Agent Williams had served in law enforcement for 23 years.</p>
+
+							<p>On the morning of September 11th, 2001, seventy-two officers from a total of eight local, state, and
+								federal agencies were killed when terrorist hijackers working for the al Qaeda terrorist network, headed
+								by Osama bin Laden, crashed four hijacked planes into the World Trade Center towers in New York City,
+								the Pentagon in Arlington, Virginia, and a field near Shanksville, Pennsylvania.</p>
+
+							<p>After the impact of the first plane into the World Trade Center's North Tower, putting the safety of
+								others before their own, law enforcement officers along with fire and EMS personnel, rushed to the
+								burning Twin Towers of the World Trade Center to aid the victims and lead them to safety. Due to their
+								quick actions, it is estimated that over 25,000 people were saved.</p>
+
+							<p>As the evacuation continued, the South Tower unexpectedly collapsed as a result of the intense fire
+								caused by the impact. The North Tower collapsed a short time later. Seventy-one law enforcement
+								officers, 343 members of the New York City Fire Department and over 2,800 civilians were killed at the
+								World Trade Center site.</p>
+
+							<p>A third hijacked plane crashed into a field in rural Pennsylvania when the passengers attempted to
+								re-take control of the plane. One law enforcement officer, who was a passenger on the plane, was killed
+								in that crash.</p>
+
+							<p>The fourth hijacked plane was crashed into the Pentagon in Arlington, Virginia, killing almost 200
+								military and civilian personnel. No law enforcement officers were killed at the Pentagon on 9/11.</p>
+
+							<p>The terrorist attacks resulted in the declaration of war against the Taliban regime, the illegal rulers
+								of Afghanistan, and the al Qaeda terrorist network which also was based in Afghanistan.</p>
+
+							<p>On September 9th, 2005, all of the public safety officers killed on September 11th, 2001, were
+								posthumously awarded the 9/11 Heroes Medal of Valor by President George W. Bush.</p>
+
+							<p>The contamination in the air at the World Trade Center site caused many rescue personnel to become
+								extremely ill and eventually led to the death of several rescue workers.</p>
+
+							<p>On May 1st, 2011 members of the United States military conducted a raid on a compound in Abbottabad,
+								Pakistan, and killed Osama bin Laden.</p>
+						</div>
+						<div class="inmemorium-tabs__content--item animated fadeIn" id="tab4">
+							<figure class="flag-accent">
+								<img src="img/inmemorium/edward-smith.jpg" alt="Special Agent: Edward Joseph Smith">
+							</figure>
+
+							<h2>
+								<span class="d-block">Special Agent</span>
+								Edward Joseph Smith
+							</h2>
+							<p><strong>Special Agent Edward Smith died as the result of cancer that he developed following his
+									assignment to
+									evidence recovery efforts at the Fresh Kills landfill site following the 9/11 Terrorist Attacks on the
+									World Trade Center in New York City.</strong></p>
+
+							<p>Special Agent Smith had served in law enforcement for 21 years. He is survived by his wife and eight
+								children.</p>
+
+							<p>On the morning of September 11th, 2001, seventy-two officers from a total of eight local, state, and
+								federal agencies were killed when terrorist hijackers working for the al Qaeda terrorist network, headed
+								by Osama bin Laden, crashed four hijacked planes into the World Trade Center towers in New York City,
+								the Pentagon in Arlington, Virginia, and a field near Shanksville, Pennsylvania.</p>
+
+							<p>After the impact of the first plane into the World Trade Center's North Tower, putting the safety of
+								others before their own, law enforcement officers along with fire and EMS personnel, rushed to the
+								burning Twin Towers of the World Trade Center to aid the victims and lead them to safety. Due to their
+								quick actions, it is estimated that over 25,000 people were saved.</p>
+
+							<p>As the evacuation continued, the South Tower unexpectedly collapsed as a result of the intense fire
+								caused by the impact. The North Tower collapsed a short time later. Seventy-one law enforcement
+								officers, 343 members of the New York City Fire Department and over 2,800 civilians were killed at the
+								World Trade Center site.</p>
+
+							<p>A third hijacked plane crashed into a field in rural Pennsylvania when the passengers attempted to
+								re-take control of the plane. One law enforcement officer, who was a passenger on the plane, was killed
+								in that crash.</p>
+
+							<p>The fourth hijacked plane was crashed into the Pentagon in Arlington, Virginia, killing almost 200
+								military and civilian personnel. No law enforcement officers were killed at the Pentagon on 9/11.</p>
+
+							<p>The terrorist attacks resulted in the declaration of war against the Taliban regime, the illegal rulers
+								of Afghanistan, and the al Qaeda terrorist network which also was based in Afghanistan.</p>
+
+							<p>On September 9th, 2005, all of the public safety officers killed on September 11th, 2001, were
+								posthumously awarded the 9/11 Heroes Medal of Valor by President George W. Bush.</p>
+
+							<p>The contamination in the air at the World Trade Center site caused many rescue personnel to become
+								extremely ill and eventually led to the death of several rescue workers.</p>
+
+							<p>On May 1st, 2011 members of the United States military conducted a raid on a compound in Abbottabad,
+								Pakistan, and killed Osama bin Laden.</p>
+
+						</div>
+					</div><!-- tabs-content -->
+				</div><!-- Tabs -->
+
+
+
+			</div>
+		</section>
+
+		<section class="scrollspy page-section bg-gradient-blue" id="resources">
+			<div class="container">
+				<figure class="page-accent__wrap">
+					<div class="page-accent">
 						<svg viewbox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M26.08 31.76l-9.96-7.4L6.3 32l3.66-12.22L0 12.37l12.22-.15L15.88 0l3.9 12.13L32 11.99l-9.82 7.64 3.9 12.13z">
@@ -1330,12 +1624,13 @@
 	</main>
 	<!-- JS -->
 	<script src="vendor/jquery/dist/jquery.min.js" type="text/javascript"></script>
+	<script src="vendor/imagesloaded/imagesloaded.pkgd.min.js" type="text/javascript"></script>
 	<script src="vendor/slick-carousel/slick/slick.min.js" type="text/javascript"></script>
-	<script src="vendor/wow.js/dist/wow.min.js"></script>
+	<script src="vendor/wow.js/dist/wow.min.js" type="text/javascript"></script>
 	<script>
 		new WOW().init();
 	</script>
-	<script src="js/scripts.js" type="text/javascript"></script>
+	<script src="js/scripts.min.js" type="text/javascript"></script>
 </body>
 
 </html>
