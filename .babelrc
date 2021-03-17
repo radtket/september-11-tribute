@@ -1,19 +1,8 @@
 {
-  "presets": ["env"]
+  "presets": ["env"],
+  "env": {
+    "production": {
+      "presets": ["minify"]
+    }
+  }
 }
-
-// {
-//   "presets": [
-//     [
-//       "env",
-//       {
-//         "targets": {
-//           "browsers": ["IE >= 11"]
-//         },
-//         "useBuiltIns": "usage",
-//         "debug": true
-//       }
-//     ],
-//   ],
-//   "retainLines": true
-// }

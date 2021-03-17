@@ -1,20 +1,17 @@
 import $ from "jquery";
 
 const stickyNavInit = () => {
-	const stickyNavTop = $(".navbar").offset().top;
-	const stickyNav = () => {
-		const scrollTop = $(window).scrollTop();
+  const { top } = $(".navbar").offset();
 
-		if (scrollTop > stickyNavTop) {
-			$(".navbar").addClass("sticky");
-		} else {
-			$(".navbar").removeClass("sticky");
-		}
-	};
+  $(window).on("scroll", () => {
+    const scrollTop = $(window).scrollTop();
 
-	$(window).scroll(() => {
-		stickyNav();
-	});
+    if (scrollTop > top) {
+      $(".navbar").addClass("sticky");
+    } else {
+      $(".navbar").removeClass("sticky");
+    }
+  });
 };
 
 export default stickyNavInit;
