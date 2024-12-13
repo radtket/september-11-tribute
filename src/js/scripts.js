@@ -1,5 +1,8 @@
 /* eslint-disable func-names */
 import $ from "jquery";
+import imagesLoaded from "imagesloaded";
+import "slick-carousel";
+import WOW from 'wow.js'
 import handleSmoothScroll from "./_smooth-scroll";
 import stickyNavInit from "./_sticky-nav";
 import initTimeline from "./_timeline";
@@ -11,7 +14,10 @@ import initNamesListExpander from "./_names-list-expander";
 import "./_sliders";
 import "./_vertical-timeline";
 
+imagesLoaded.makeJQueryPlugin($);
+
 $(window).on("load", () => {
+	new WOW().init();
 	$("body").imagesLoaded(() => {
 		$(".page-loader div").fadeOut();
 		$(".page-loader")

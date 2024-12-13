@@ -1,7 +1,32 @@
-@import "../../node_modules/bourbon/core/bourbon";
-@import "../../node_modules/bourbon-neat/core/neat";
-@import "../../node_modules/slick-carousel/slick/slick.scss";
+@import "node_modules/bourbon/core/_bourbon.scss";
+@import "node_modules/bourbon-neat/core/_neat.scss";
+@import "node_modules/slick-carousel/slick/slick.scss";
 @import "normalize";
 @import "fonts";
-@import "base/**/*";
-@import "components/**/*";
+
+@import './base/__variables.scss';
+@import './base/_animations.scss';
+@import './base/_backgrounds.scss';
+@import './base/_buttons.scss';
+@import './base/_forms.scss';
+@import './base/_layout.scss';
+@import './base/_lists.scss';
+@import './base/_media.scss';
+@import './base/_tables.scss';
+@import './base/_typography.scss';
+
+@import "./components/_animate.scss";
+@import "./components/_documents.scss";
+@import "./components/_flag-quote.scss";
+@import "./components/_gallery-slider.scss";
+@import "./components/_header.scss";
+@import "./components/_hero.scss";
+@import "./components/_in-memorium.scss";
+@import "./components/_names-slider.scss";
+@import "./components/_navbar.scss";
+@import "./components/_page-loader.scss";
+@import "./components/_recognition.scss";
+@import "./components/_slick-theme.scss";
+@import "./components/_star.scss";
+@import "./components/_vertical-tabs-timeline.scss";
+//  @import "components/**/*.scss";

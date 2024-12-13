@@ -22,3 +22,6 @@ Desktop.ini
 
 # Windows shortcuts
 *.lnk
+
+.cache
+dist
